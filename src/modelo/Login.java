@@ -28,4 +28,10 @@ public class Login {
 		this.senha = senha;
 	}
 
+	@Override
+	public String toString() {
+		return usuario+"#"+senha;
+	}
+
+	
 }

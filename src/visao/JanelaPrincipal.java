@@ -1,6 +1,7 @@
 package visao;
 
 import java.awt.EventQueue;
+import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -21,7 +22,9 @@ public class JanelaPrincipal extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel content;
-	private TelaIncendio2 p2;
+	private TelaIncendio2 t2 = new TelaIncendio2();
+	private TelaDeAutenticação ta = new TelaDeAutenticação();
+	private JMenu menuEngenharia;
 
 	/**
 	 * Launch the application.
@@ -57,12 +60,11 @@ public class JanelaPrincipal extends JFrame{
 		JMenuItem itemAutenticar = new JMenuItem("Autenticar");
 		itemAutenticar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaDeAutenticação p1 = new TelaDeAutenticação();
-				p1.setSize(665, 658);
-				p1.setLocation(0, 0);
+				ta.setSize(665, 658);
+				ta.setLocation(0, 0);
 				
 				content.removeAll();
-				content.add(p1, BorderLayout.CENTER);
+				content.add(ta, BorderLayout.CENTER);
 				content.revalidate();
 			}
 		});
@@ -72,29 +74,30 @@ public class JanelaPrincipal extends JFrame{
 		menuPrincipal.add(itemSair);
 		
 		JMenu menuASCOM = new JMenu("ASCOM");
+		menuASCOM.setEnabled(false);
 		menuBar.add(menuASCOM);
 		
-		JMenu mnNewMenu = new JMenu("Engenharia");
-		menuBar.add(mnNewMenu);
+		menuEngenharia = new JMenu("Engenharia");
+		menuEngenharia.setEnabled(false);
+		menuBar.add(menuEngenharia);
 		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Solicitação de cortinas");
-		mnNewMenu.add(mntmNewMenuItem_1);
+		JMenuItem itemCortinas = new JMenuItem("Solicitação de cortinas");
+		menuEngenharia.add(itemCortinas);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Manuntenção dos Sistemas de Incêndio");
-		mntmNewMenuItem.addActionListener(new ActionListener() {
+		JMenuItem itemIncendio = new JMenuItem("Manuntenção dos Sistemas de Incêndio");
+		itemIncendio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaIncendio2 p2 = new TelaIncendio2();
-				p2.setSize(665, 658);
-				p2.setLocation(0, 0);
+				t2.setSize(665, 658);
+				t2.setLocation(0, 0);
 				
 				content.removeAll();
-				content.add(p2, BorderLayout.CENTER);
+				content.add(t2, BorderLayout.CENTER);
 				content.revalidate();
 			}
 		});
 		
 		
-		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+		itemCortinas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaCortina p3 = new TelaCortina();
 				p3.setSize(665, 658);
@@ -105,18 +108,46 @@ public class JanelaPrincipal extends JFrame{
 				content.revalidate();
 			}
 		});
-		mnNewMenu.add(mntmNewMenuItem);
+		menuEngenharia.add(itemIncendio);
 		
-		JMenu mnNewMenu_1 = new JMenu("PROPLAN");
-		menuBar.add(mnNewMenu_1);
+		JMenu menuProplan = new JMenu("PROPLAN");
+		menuProplan.setEnabled(false);
+		menuBar.add(menuProplan);
 		
-		JMenu mnNewMenu_2 = new JMenu("SEI");
-		menuBar.add(mnNewMenu_2);
+		JMenu menuSEI = new JMenu("SEI");
+		menuSEI.setEnabled(false);
+		menuBar.add(menuSEI);
 		content = new JPanel();
 		content.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(content);
 		content.setLayout(new CardLayout(0, 0));
 	}
+
+	public TelaIncendio2 getT2() {
+		return t2;
+	}
+
+	public void setT2(TelaIncendio2 t2) {
+		this.t2 = t2;
+	}
+
+	public TelaDeAutenticação getTa() {
+		return ta;
+	}
+
+	public void setTa(TelaDeAutenticação ta) {
+		this.ta = ta;
+	}
+
+	public JMenu getMenuEngenharia() {
+		return menuEngenharia;
+	}
+
+	public void setMenuEngenharia(JMenu menuEngenharia) {
+		this.menuEngenharia = menuEngenharia;
+	}
+	
+	
 
 }

@@ -18,6 +18,8 @@ public class TelaDeAutenticação extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JTextField fieldUsuario;
 	private JPasswordField fieldSenha;
+	private JButton buttonAutenticar;
+	private JButton buttonCancelar;
 
 	/**
 	 * Create the panel.
@@ -45,12 +47,12 @@ public class TelaDeAutenticação extends JPanel {
 		fieldSenha = new JPasswordField();
 		panel.add(fieldSenha, "cell 1 7,growx");
 		
-		JButton btnAutenticar = new JButton("Autenticar");
-		btnAutenticar.setFont(new Font("Arial", Font.BOLD, 11));
-		panel.add(btnAutenticar, "flowx,cell 1 9,alignx center");
+		 buttonAutenticar = new JButton("Autentica");
+		 buttonAutenticar.setFont(new Font("Arial", Font.BOLD, 11));
+		panel.add(buttonAutenticar, "flowx,cell 1 9,alignx center");
 		
-		JButton labelCancelar = new JButton("Cancelar");
-		labelCancelar.addActionListener(new ActionListener() {
+		 buttonCancelar = new JButton("Cancelar");
+		 buttonCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			fieldUsuario.setText(null);
@@ -58,8 +60,8 @@ public class TelaDeAutenticação extends JPanel {
 			
 			}
 		});
-		labelCancelar.setFont(new Font("Arial", Font.BOLD, 11));
-		panel.add(labelCancelar, "cell 1 9,alignx center,aligny center");
+		buttonCancelar.setFont(new Font("Arial", Font.BOLD, 11));
+		panel.add(buttonCancelar, "cell 1 9,alignx center,aligny center");
 
 	}
 
@@ -78,5 +80,22 @@ public class TelaDeAutenticação extends JPanel {
 	public void setFieldSenha(JPasswordField fieldSenha) {
 		this.fieldSenha = fieldSenha;
 	}
+
+	public JButton getButtonAutenticar() {
+		return buttonAutenticar;
+	}
+
+	public void setButtonAutenticar(JButton buttonAutenticar) {
+		this.buttonAutenticar = buttonAutenticar;
+	}
+
+	public JButton getButtonCancelar() {
+		return buttonCancelar;
+	}
+
+	public void setButtonCancelar(JButton buttonCancelar) {
+		this.buttonCancelar = buttonCancelar;
+	}
+	
 
 }

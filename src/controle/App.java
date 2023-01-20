@@ -1,6 +1,7 @@
 package controle;
 
 import modelo.Incendio;
+import modelo.Login;
 import visao.JanelaPrincipal;
 import visao.TelaIncendio2;
 
@@ -10,7 +11,8 @@ public class App {
 		jan.setVisible(true);
 		Incendio inc = new Incendio();
 		TelaIncendio2 ti2 = new TelaIncendio2();
-		IncendioControle inccon = new IncendioControle(ti2, inc);
+		Login li = new Login();
+		IncendioControle inccon = new IncendioControle(jan, inc, li);
 	}
 	
 

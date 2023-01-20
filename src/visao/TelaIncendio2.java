@@ -93,7 +93,7 @@ public class TelaIncendio2 extends JPanel {
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 11));
 		panel.add(lblNewLabel, "cell 0 12");
 		
-		JTextArea irregArea = new JTextArea();
+		irregArea = new JTextArea();
 		irregArea.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "Descri\u00E7\u00E3o", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel.add(irregArea, "cell 0 13,grow");
 		
@@ -111,7 +111,7 @@ public class TelaIncendio2 extends JPanel {
 		lblNewLabel_2_1_2_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		panel.add(lblNewLabel_2_1_2_1_1_1_1, "cell 0 15");
 		
-		JComboBox<String> comboSist = new JComboBox<String>();
+		comboSist = new JComboBox<String>();
 		comboSist.setForeground(Color.DARK_GRAY);
 		comboSist.setFont(new Font("Arial", Font.PLAIN, 11));
 		comboSist.setBackground(Color.WHITE);
@@ -164,11 +164,11 @@ public class TelaIncendio2 extends JPanel {
 		lblNewLabel_10_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		panel.add(lblNewLabel_10_1, "cell 0 26");
 		
-		JTextArea obsArea = new JTextArea();
+		 obsArea = new JTextArea();
 		obsArea.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "Obs", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel.add(obsArea, "cell 0 27,grow");
 		
-		 buttonEnviar = new JButton("Enviar");
+		 buttonEnviar = new JButton("Envio");
 		buttonEnviar.setFont(new Font("Arial", Font.BOLD, 12));
 		panel.add(buttonEnviar, "flowx,cell 0 29,alignx center,aligny center");
 		
