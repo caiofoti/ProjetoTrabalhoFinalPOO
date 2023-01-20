@@ -14,13 +14,14 @@ import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class JanelaPrincipal extends JFrame {
+public class JanelaPrincipal extends JFrame{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel content;
+	private TelaIncendio2 p2;
 
 	/**
 	 * Launch the application.
@@ -77,17 +78,6 @@ public class JanelaPrincipal extends JFrame {
 		menuBar.add(mnNewMenu);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Solicitação de cortinas");
-		mntmNewMenuItem_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				TelaCortina p3 = new TelaCortina();
-				p3.setSize(665, 658);
-				p3.setLocation(0, 0);
-				
-				content.removeAll();
-				content.add(p3, BorderLayout.CENTER);
-				content.revalidate();
-			}
-		});
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Manuntenção dos Sistemas de Incêndio");
@@ -99,6 +89,19 @@ public class JanelaPrincipal extends JFrame {
 				
 				content.removeAll();
 				content.add(p2, BorderLayout.CENTER);
+				content.revalidate();
+			}
+		});
+		
+		
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaCortina p3 = new TelaCortina();
+				p3.setSize(665, 658);
+				p3.setLocation(0, 0);
+				
+				content.removeAll();
+				content.add(p3, BorderLayout.CENTER);
 				content.revalidate();
 			}
 		});

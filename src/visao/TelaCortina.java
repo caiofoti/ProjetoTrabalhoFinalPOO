@@ -1,9 +1,11 @@
-package visao;
+ package visao;
 
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JScrollPane;
 import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
@@ -15,17 +17,15 @@ import javax.swing.border.TitledBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.JButton;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 
 public class TelaCortina extends JPanel {
-
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField fieldTel;
+	private JTextField fieldEmail;
+	private JTextField fieldLocal;
+	private JTextField fieldResp;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
@@ -91,28 +91,28 @@ public class TelaCortina extends JPanel {
 		label_1.setAlignment(Label.CENTER);
 		panel.add(label_1, "cell 0 7,grow");
 		
-		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Substituição de cortina existente");
-		lblNewLabel_1_1_1_1_1.setFont(new Font("Arial", Font.BOLD, 14));
-		panel.add(lblNewLabel_1_1_1_1_1, "flowx,cell 0 9");
+		JLabel Substituição = new JLabel("Substituição de cortina existente");
+		Substituição.setFont(new Font("Arial", Font.BOLD, 14));
+		panel.add(Substituição, "flowx,cell 0 9");
 		
 		JLabel lblNewLabel_2_1_2_1_1_1 = new JLabel("*");
 		lblNewLabel_2_1_2_1_1_1.setForeground(Color.RED);
 		lblNewLabel_2_1_2_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		panel.add(lblNewLabel_2_1_2_1_1_1, "cell 0 9");
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Sim");
-		buttonGroup.add(rdbtnNewRadioButton);
-		rdbtnNewRadioButton.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel.add(rdbtnNewRadioButton, "cell 0 11");
+		JRadioButton buttonSim = new JRadioButton("Sim");
+		buttonGroup.add(buttonSim);
+		buttonSim.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel.add(buttonSim, "cell 0 11");
 		
-		JRadioButton rdbtnNo = new JRadioButton("Não");
-		buttonGroup.add(rdbtnNo);
-		rdbtnNo.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel.add(rdbtnNo, "cell 0 12");
+		JRadioButton buttonNo = new JRadioButton("Não");
+		buttonGroup.add(buttonNo);
+		buttonNo.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel.add(buttonNo, "cell 0 12");
 		
-		JLabel lblNewLabel_1_1_1_1_1_1 = new JLabel("Ramal/Telefone");
-		lblNewLabel_1_1_1_1_1_1.setFont(new Font("Arial", Font.BOLD, 14));
-		panel.add(lblNewLabel_1_1_1_1_1_1, "flowx,cell 0 14");
+		JLabel Ramal_Telef = new JLabel("Ramal/Telefone");
+		Ramal_Telef.setFont(new Font("Arial", Font.BOLD, 14));
+		panel.add(Ramal_Telef, "flowx,cell 0 14");
 		
 		JLabel lblNewLabel_2_1_2_1_1_1_1 = new JLabel("*");
 		lblNewLabel_2_1_2_1_1_1_1.setForeground(Color.RED);
@@ -123,48 +123,48 @@ public class TelaCortina extends JPanel {
 		lblNewLabel_6_3.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel.add(lblNewLabel_6_3, "cell 0 15");
 		
-		textField = new JTextField();
-		panel.add(textField, "cell 0 16,growx");
-		textField.setColumns(10);
+		fieldTel = new JTextField();
+		panel.add(fieldTel, "cell 0 16,growx");
+		fieldTel.setColumns(10);
 		
-		JLabel lblNewLabel_1_1_1_1_1_1_1 = new JLabel("Email");
-		lblNewLabel_1_1_1_1_1_1_1.setFont(new Font("Arial", Font.BOLD, 14));
-		panel.add(lblNewLabel_1_1_1_1_1_1_1, "flowx,cell 0 18");
+		JLabel email = new JLabel("Email");
+		email.setFont(new Font("Arial", Font.BOLD, 14));
+		panel.add(email, "flowx,cell 0 18");
 		
 		JLabel lblNewLabel_2_1_2_1_1_1_1_1 = new JLabel("*");
 		lblNewLabel_2_1_2_1_1_1_1_1.setForeground(Color.RED);
 		lblNewLabel_2_1_2_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		panel.add(lblNewLabel_2_1_2_1_1_1_1_1, "cell 0 18");
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		panel.add(textField_1, "cell 0 19,growx");
+		fieldEmail = new JTextField();
+		fieldEmail.setColumns(10);
+		panel.add(fieldEmail, "cell 0 19,growx");
 		
-		JLabel lblNewLabel_1_1_1_1_1_1_1_1 = new JLabel("Local (sala e prédio)");
-		lblNewLabel_1_1_1_1_1_1_1_1.setFont(new Font("Arial", Font.BOLD, 14));
-		panel.add(lblNewLabel_1_1_1_1_1_1_1_1, "flowx,cell 0 21");
+		JLabel local = new JLabel("Local (sala e prédio)");
+		local.setFont(new Font("Arial", Font.BOLD, 14));
+		panel.add(local, "flowx,cell 0 21");
 		
 		JLabel lblNewLabel_2_1_2_1_1_1_1_1_1 = new JLabel("*");
 		lblNewLabel_2_1_2_1_1_1_1_1_1.setForeground(Color.RED);
 		lblNewLabel_2_1_2_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		panel.add(lblNewLabel_2_1_2_1_1_1_1_1_1, "cell 0 21");
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		panel.add(textField_2, "cell 0 22,growx");
+		fieldLocal = new JTextField();
+		fieldLocal.setColumns(10);
+		panel.add(fieldLocal, "cell 0 22,growx");
 		
-		JLabel lblNewLabel_1_1_1_1_1_1_1_1_1 = new JLabel("Justificativa");
-		lblNewLabel_1_1_1_1_1_1_1_1_1.setFont(new Font("Arial", Font.BOLD, 14));
-		panel.add(lblNewLabel_1_1_1_1_1_1_1_1_1, "flowx,cell 0 24");
+		JLabel justificativa = new JLabel("Justificativa");
+		justificativa.setFont(new Font("Arial", Font.BOLD, 14));
+		panel.add(justificativa, "flowx,cell 0 24");
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("Arial", Font.PLAIN, 13));
-		textArea.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel.add(textArea, "cell 0 25 1 2,grow");
+		JTextArea areaJust = new JTextArea();
+		areaJust.setFont(new Font("Arial", Font.PLAIN, 13));
+		areaJust.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel.add(areaJust, "cell 0 25 1 2,grow");
 		
-		JLabel lblNewLabel_1_1_1_1_1_1_1_1_1_1 = new JLabel("Responsável atribuído");
-		lblNewLabel_1_1_1_1_1_1_1_1_1_1.setFont(new Font("Arial", Font.BOLD, 14));
-		panel.add(lblNewLabel_1_1_1_1_1_1_1_1_1_1, "flowx,cell 0 28");
+		JLabel responsavel = new JLabel("Responsável atribuído");
+		responsavel.setFont(new Font("Arial", Font.BOLD, 14));
+		panel.add(responsavel, "flowx,cell 0 28");
 		
 		JLabel lblNewLabel_2_1_2_1_1_1_1_1_1_1 = new JLabel("*");
 		lblNewLabel_2_1_2_1_1_1_1_1_1_1.setForeground(Color.RED);
@@ -176,18 +176,29 @@ public class TelaCortina extends JPanel {
 		lblNewLabel_2_1_2_1_1_1_1_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		panel.add(lblNewLabel_2_1_2_1_1_1_1_1_1_2, "cell 0 28");
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		panel.add(textField_3, "cell 0 29,growx");
+		fieldResp = new JTextField();
+		fieldResp.setColumns(10);
+		panel.add(fieldResp, "cell 0 29,growx");
 		
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.setFont(new Font("Arial", Font.BOLD, 12));
-		panel.add(btnNewButton, "flowx,cell 0 31,alignx center,aligny center");
+		JButton buttonEnviar = new JButton("Enviar");
+		buttonEnviar.setFont(new Font("Arial", Font.BOLD, 12));
+		panel.add(buttonEnviar, "flowx,cell 0 31,alignx center,aligny center");
 		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setFont(new Font("Arial", Font.BOLD, 12));
-		panel.add(btnNewButton_1, "cell 0 31,alignx center,aligny center");
+		JButton buttonCancelar = new JButton("Cancelar");
+		buttonCancelar.setFont(new Font("Arial", Font.BOLD, 12));
+		panel.add(buttonCancelar, "cell 0 31,alignx center,aligny center");
+		
+		buttonCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			 if(e.getActionCommand().equals("Cancelar"))
+				 buttonGroup.clearSelection();
+				 fieldEmail.setText("");
+			 	 fieldLocal.setText("");
+			 	 fieldResp.setText("");
+			 	 fieldTel.setText("");
+			 	 areaJust.setText("");
+					;
+			}});
 
 	}
-
-}
+	}

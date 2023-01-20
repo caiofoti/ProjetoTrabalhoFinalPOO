@@ -182,7 +182,7 @@ public class TelaIncendio2 extends JPanel {
 					fieldLocal.setText(null);
 					obsArea.setText(null);
 					irregArea.setText(null);
-					comboSist.setSelectedItem(e);
+					comboSist.setSelectedItem("");
 			}});
 
 			
