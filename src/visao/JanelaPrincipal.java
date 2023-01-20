@@ -82,7 +82,7 @@ public class JanelaPrincipal extends JFrame {
 		JMenuItem mntmNewMenuItem = new JMenuItem("Manuntenção dos Sistemas de Incêndio");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaIncendio p2 = new TelaIncendio();
+				TelaIncendio2 p2 = new TelaIncendio2();
 				p2.setSize(665, 658);
 				p2.setLocation(0, 0);
 				
