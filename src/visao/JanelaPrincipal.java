@@ -21,7 +21,6 @@ public class JanelaPrincipal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel content;
-	private TelaIncendio2 p2;
 
 	/**
 	 * Launch the application.
