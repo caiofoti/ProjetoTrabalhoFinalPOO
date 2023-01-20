@@ -26,6 +26,8 @@ public class TelaCortina extends JPanel {
 	private JTextField fieldEmail;
 	private JTextField fieldLocal;
 	private JTextField fieldResp;
+	private JButton buttonEnviar;
+	private JButton buttonCancelar;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
@@ -180,11 +182,11 @@ public class TelaCortina extends JPanel {
 		fieldResp.setColumns(10);
 		panel.add(fieldResp, "cell 0 29,growx");
 		
-		JButton buttonEnviar = new JButton("Enviar");
+		 buttonEnviar = new JButton("Enviar");
 		buttonEnviar.setFont(new Font("Arial", Font.BOLD, 12));
 		panel.add(buttonEnviar, "flowx,cell 0 31,alignx center,aligny center");
 		
-		JButton buttonCancelar = new JButton("Cancelar");
+		 buttonCancelar = new JButton("Cancelar");
 		buttonCancelar.setFont(new Font("Arial", Font.BOLD, 12));
 		panel.add(buttonCancelar, "cell 0 31,alignx center,aligny center");
 		
@@ -201,4 +203,62 @@ public class TelaCortina extends JPanel {
 			}});
 
 	}
+
+	public JTextField getFieldTel() {
+		return fieldTel;
+	}
+
+	public void setFieldTel(JTextField fieldTel) {
+		this.fieldTel = fieldTel;
+	}
+
+	public JTextField getFieldEmail() {
+		return fieldEmail;
+	}
+
+	public void setFieldEmail(JTextField fieldEmail) {
+		this.fieldEmail = fieldEmail;
+	}
+
+	public JTextField getFieldLocal() {
+		return fieldLocal;
+	}
+
+	public void setFieldLocal(JTextField fieldLocal) {
+		this.fieldLocal = fieldLocal;
+	}
+
+	public JTextField getFieldResp() {
+		return fieldResp;
+	}
+
+	public void setFieldResp(JTextField fieldResp) {
+		this.fieldResp = fieldResp;
+	}
+
+	public JButton getButtonEnviar() {
+		return buttonEnviar;
+	}
+
+	public void setButtonEnviar(JButton buttonEnviar) {
+		this.buttonEnviar = buttonEnviar;
+	}
+
+	public JButton getButtonCancelar() {
+		return buttonCancelar;
+	}
+
+	public void setButtonCancelar(JButton buttonCancelar) {
+		this.buttonCancelar = buttonCancelar;
+	}
+
+	public ButtonGroup getButtonGroup() {
+		return buttonGroup;
+	}
+		
+	
+	
+	
+	
+	
 	}

@@ -25,6 +25,7 @@ public class JanelaPrincipal extends JFrame{
 	private TelaIncendio2 t2 = new TelaIncendio2();
 	private TelaDeAutenticação ta = new TelaDeAutenticação();
 	private JMenu menuEngenharia;
+	private TelaCortina tc = new TelaCortina();
 
 	/**
 	 * Launch the application.
@@ -99,12 +100,11 @@ public class JanelaPrincipal extends JFrame{
 		
 		itemCortinas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaCortina p3 = new TelaCortina();
-				p3.setSize(665, 658);
-				p3.setLocation(0, 0);
+				tc.setSize(665, 658);
+				tc.setLocation(0, 0);
 				
 				content.removeAll();
-				content.add(p3, BorderLayout.CENTER);
+				content.add(tc, BorderLayout.CENTER);
 				content.revalidate();
 			}
 		});
@@ -146,6 +146,14 @@ public class JanelaPrincipal extends JFrame{
 
 	public void setMenuEngenharia(JMenu menuEngenharia) {
 		this.menuEngenharia = menuEngenharia;
+	}
+
+	public TelaCortina getTc() {
+		return tc;
+	}
+
+	public void setTc(TelaCortina tc) {
+		this.tc = tc;
 	}
 	
 	

@@ -16,6 +16,9 @@ public class Cortina {
 		this.just = just;
 		this.resp = resp;
 	}
+	public Cortina() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getSub() {
 		return sub;
 	}

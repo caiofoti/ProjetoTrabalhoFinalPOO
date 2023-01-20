@@ -1,5 +1,6 @@
 package controle;
 
+import modelo.Cortina;
 import modelo.Incendio;
 import modelo.Login;
 import visao.JanelaPrincipal;
@@ -12,7 +13,8 @@ public class App {
 		Incendio inc = new Incendio();
 		TelaIncendio2 ti2 = new TelaIncendio2();
 		Login li = new Login();
-		IncendioControle inccon = new IncendioControle(jan, inc, li);
+		Cortina co = new Cortina();
+		IncendioControle inccon = new IncendioControle(jan, inc, li, co);
 	}
 	
 
