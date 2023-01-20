@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JScrollPane;
 import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
@@ -21,14 +23,18 @@ public class TelaIncendio2 extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-
+	private JTextField fieldLocal;
+	private JTextField fieldContato;
+	private JButton buttonEnviar;
+	private JButton buttonCancelar;
+	private JTextArea obsArea;
+	private JTextArea irregArea;
+	private JComboBox<String> comboSist;
 	/**
 	 * Create the panel.
 	 */
 	public TelaIncendio2() {
-		setBounds(100, 100, 665, 3000);
+		setBounds(100, 100, 665, 658);
 		setLayout(new MigLayout("", "[grow]", "[grow]"));
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -87,9 +93,9 @@ public class TelaIncendio2 extends JPanel {
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 11));
 		panel.add(lblNewLabel, "cell 0 12");
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "Descri\u00E7\u00E3o", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel.add(textArea, "cell 0 13,grow");
+		JTextArea irregArea = new JTextArea();
+		irregArea.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "Descri\u00E7\u00E3o", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.add(irregArea, "cell 0 13,grow");
 		
 		JLabel lblNewLabel_2_1_2_1_1_1 = new JLabel("*");
 		lblNewLabel_2_1_2_1_1_1.setForeground(Color.RED);
@@ -105,11 +111,20 @@ public class TelaIncendio2 extends JPanel {
 		lblNewLabel_2_1_2_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		panel.add(lblNewLabel_2_1_2_1_1_1_1, "cell 0 15");
 		
-		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setForeground(Color.DARK_GRAY);
-		comboBox.setFont(new Font("Arial", Font.PLAIN, 11));
-		comboBox.setBackground(Color.WHITE);
-		panel.add(comboBox, "cell 0 16,alignx left");
+		JComboBox<String> comboSist = new JComboBox<String>();
+		comboSist.setForeground(Color.DARK_GRAY);
+		comboSist.setFont(new Font("Arial", Font.PLAIN, 11));
+		comboSist.setBackground(Color.WHITE);
+		panel.add(comboSist, "cell 0 16,alignx left");
+		comboSist.addItem("");
+		comboSist.addItem("MANUTENÇÃO DOS SISTEMAS DE INCÊNDIO");
+		comboSist.addItem("Alarmes");
+		comboSist.addItem("Componentes SPK");
+		comboSist.addItem("Componente dos Hidrantes");
+		comboSist.addItem("Iluminação de Emergência e Balizamento");
+		comboSist.addItem("Portas Corta Fogo");
+		comboSist.addItem("Sistema de pressurização da escada do P2");
+
 		
 		JLabel lblNewLabel_1_1_1_1_1_1_1 = new JLabel("Local");
 		lblNewLabel_1_1_1_1_1_1_1.setFont(new Font("Arial", Font.BOLD, 14));
@@ -124,17 +139,17 @@ public class TelaIncendio2 extends JPanel {
 		lblNewLabel_10.setFont(new Font("Arial", Font.PLAIN, 11));
 		panel.add(lblNewLabel_10, "cell 0 19");
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		panel.add(textField, "cell 0 20,growx");
+		fieldLocal = new JTextField();
+		fieldLocal.setColumns(10);
+		panel.add(fieldLocal, "cell 0 20,growx");
 		
 		JLabel lblNewLabel_1_1_1_1_1_1_1_1 = new JLabel("Fone de contato");
 		lblNewLabel_1_1_1_1_1_1_1_1.setFont(new Font("Arial", Font.BOLD, 14));
 		panel.add(lblNewLabel_1_1_1_1_1_1_1_1, "flowx,cell 0 22");
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		panel.add(textField_1, "cell 0 23,growx");
+		fieldContato = new JTextField();
+		fieldContato.setColumns(10);
+		panel.add(fieldContato, "cell 0 23,growx");
 		
 		JLabel lblNewLabel_2_1_2_1_1_1_1_1_1 = new JLabel("*");
 		lblNewLabel_2_1_2_1_1_1_1_1_1.setForeground(Color.RED);
@@ -149,18 +164,90 @@ public class TelaIncendio2 extends JPanel {
 		lblNewLabel_10_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		panel.add(lblNewLabel_10_1, "cell 0 26");
 		
-		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "Obs", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel.add(textArea_1, "cell 0 27,grow");
+		JTextArea obsArea = new JTextArea();
+		obsArea.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "Obs", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel.add(obsArea, "cell 0 27,grow");
 		
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.setFont(new Font("Arial", Font.BOLD, 12));
-		panel.add(btnNewButton, "flowx,cell 0 29,alignx center,aligny center");
+		 buttonEnviar = new JButton("Enviar");
+		buttonEnviar.setFont(new Font("Arial", Font.BOLD, 12));
+		panel.add(buttonEnviar, "flowx,cell 0 29,alignx center,aligny center");
 		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setFont(new Font("Arial", Font.BOLD, 12));
-		panel.add(btnNewButton_1, "cell 0 29,alignx center,aligny center");
+		 buttonCancelar = new JButton("Cancelar");
+		buttonCancelar.setFont(new Font("Arial", Font.BOLD, 12));
+		panel.add(buttonCancelar, "cell 0 29,alignx center,aligny center");
+		buttonCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			 if(e.getActionCommand().equals("Cancelar"))
+					fieldContato.setText(null);
+					fieldLocal.setText(null);
+					obsArea.setText(null);
+					irregArea.setText(null);
+					comboSist.setSelectedItem("");
+			}});
+
+			
 
 	}
+	
+	public JTextField getFieldLocal() {
+		return fieldLocal;
+	}
+
+	public void setFieldLocal(JTextField fieldLocal) {
+		this.fieldLocal = fieldLocal;
+	}
+
+	public JTextField getFieldContato() {
+		return fieldContato;
+	}
+
+	public void setFieldContato(JTextField fieldContato) {
+		this.fieldContato = fieldContato;
+	}
+
+	public JButton getButtonEnviar() {
+		return buttonEnviar;
+	}
+
+	public void setButtonEnviar(JButton buttonEnviar) {
+		this.buttonEnviar = buttonEnviar;
+	}
+
+	public JButton getButtonCancelar() {
+		return buttonCancelar;
+	}
+
+	public void setButtonCancelar(JButton buttonCancelar) {
+		this.buttonCancelar = buttonCancelar;
+	}
+
+	public JTextArea getObsArea() {
+		return obsArea;
+	}
+
+	public void setObsArea(JTextArea obsArea) {
+		this.obsArea = obsArea;
+	}
+
+	public JTextArea getIrregArea() {
+		return irregArea;
+	}
+
+	public void setIrregArea(JTextArea irregArea) {
+		this.irregArea = irregArea;		
+	}
+	
+	public JComboBox<String> getComboSist() {
+		return comboSist;
+	}
+
+	public void setComboSist(JComboBox<String> comboSist) {
+		this.comboSist = comboSist;
+	}
+	
+	
+	
+	
+
 
 }
