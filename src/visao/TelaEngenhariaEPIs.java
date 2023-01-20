@@ -19,10 +19,11 @@ import java.awt.SystemColor;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.JRadioButton;
 
 public class TelaEngenhariaEPIs extends JPanel {
 
-	/**///sexosexo
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -51,7 +52,7 @@ public class TelaEngenhariaEPIs extends JPanel {
 		panel.setLayout(new MigLayout("", "[612.00,grow][][][]", "[][grow][][][][][][][][][][][][][][][][][][][][][13.00][][grow][][][][][grow][][][][][][][grow][][][][][]"));
 		
 		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\Caio\\Downloads\\TelaPedidos4.jpg"));
+		lblNewLabel_3.setIcon(new ImageIcon("/ProjetoTrabalhoFinalPOO/TelaPedidos4.jpg"));
 		panel.add(lblNewLabel_3, "cell 0 0");
 		
 		JPanel panel_2 = new JPanel();
