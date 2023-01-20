@@ -23,9 +23,13 @@ import javax.swing.JRadioButton;
 
 public class TelaEngenhariaEPIs extends JPanel {
 
+<<<<<<< HEAD
 	/**
 	 * 
 	 */
+=======
+
+>>>>>>> 0d5f001a811c9b35adbe6304206181fcdf755a28
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;

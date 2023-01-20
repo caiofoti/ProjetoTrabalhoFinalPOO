@@ -67,7 +67,7 @@ public class TelaIncendio extends JFrame {
 		panel.setLayout(new MigLayout("", "[-7.00][609.00,grow]", "[][20px][][][][24.00][][][20px][][20px][][][grow][][47.00][][][20px][][5px][][5px][][20px][][][20px][][][80px][20px][]"));
 		
 		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\Caio\\Downloads\\TelaPedidos4.jpg"));
+		lblNewLabel_3.setIcon(new ImageIcon("/ProjetoTrabalhoFinalPOO/src/TelaPedidos4.jpg"));
 		panel.add(lblNewLabel_3, "cell 0 0 2 1");
 		
 		JLabel lblNewLabel_1 = new JLabel("Geralmente atende em:");
