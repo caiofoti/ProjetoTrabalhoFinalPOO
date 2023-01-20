@@ -27,6 +27,7 @@ public class IncendioControle implements ActionListener {
 		j.getTa().getButtonCancelar().addActionListener(this);
 		j.getTc().getButtonEnviar().addActionListener(this);
 		j.getTc().getButtonCancelar().addActionListener(this);
+		j.getItemSair().addActionListener(this);
 	}
 
 	public void enviaIncendio() {
@@ -116,11 +117,14 @@ public class IncendioControle implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("Envio"))
 			enviaIncendio();
-		else if (e.getActionCommand().equals("Autentica"))
+		else if (e.getActionCommand().equals("Autentica")) {
 			consultaLogin();
-		else if (e.getActionCommand().equals("Enviar")) {
+		} else if (e.getActionCommand().equals("Enviar")) {
 			enviaCortina();
-			// System.out.println("teste");
+		}
+		// System.out.println("teste");
+		else if (e.getActionCommand().equals("Sair")) {
+			System.exit(0);
 		}
 	}
 }

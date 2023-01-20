@@ -14,12 +14,14 @@ import modelo.Login;
 
 public class IncendioDAO {
 	private File arq;
+	private File arqUsuario;
 	private FileWriter fw;
 	private BufferedWriter bw;
 
 	public IncendioDAO()
 	{
 		arq=new File("pedido.txt");
+		arqUsuario = new File("usuarios.txt");
 	}
 
 	public boolean enviaIncendio(Incendio inc) {
@@ -88,7 +90,7 @@ public class IncendioDAO {
 		boolean resp=false;
 		
 		try {
-			FileReader fr= new FileReader(arq);
+			FileReader fr= new FileReader(arqUsuario);
 			BufferedReader br= new BufferedReader(fr);
 			
 			String linha=null;

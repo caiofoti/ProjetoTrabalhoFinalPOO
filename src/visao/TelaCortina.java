@@ -36,7 +36,7 @@ public class TelaCortina extends JPanel {
 	 * Create the panel.
 	 */
 	public TelaCortina() {
-		setBounds(100, 100, 665, 3000);
+		setBounds(100, 100, 665, 658);
 		setLayout(new MigLayout("", "[grow]", "[grow]"));
 		
 		JScrollPane scrollPane = new JScrollPane();

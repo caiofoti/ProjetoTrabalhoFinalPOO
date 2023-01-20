@@ -26,6 +26,7 @@ public class JanelaPrincipal extends JFrame{
 	private TelaDeAutenticação ta = new TelaDeAutenticação();
 	private JMenu menuEngenharia;
 	private TelaCortina tc = new TelaCortina();
+	private JMenuItem itemSair;
 
 	/**
 	 * Launch the application.
@@ -71,7 +72,7 @@ public class JanelaPrincipal extends JFrame{
 		});
 		menuPrincipal.add(itemAutenticar);
 		
-		JMenuItem itemSair = new JMenuItem("Sair");
+		 itemSair = new JMenuItem("Sair");
 		menuPrincipal.add(itemSair);
 		
 		JMenu menuASCOM = new JMenu("ASCOM");
@@ -155,6 +156,15 @@ public class JanelaPrincipal extends JFrame{
 	public void setTc(TelaCortina tc) {
 		this.tc = tc;
 	}
+
+	public JMenuItem getItemSair() {
+		return itemSair;
+	}
+
+	public void setItemSair(JMenuItem itemSair) {
+		this.itemSair = itemSair;
+	}
+	
 	
 	
 
