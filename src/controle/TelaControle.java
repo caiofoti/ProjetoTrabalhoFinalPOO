@@ -3,25 +3,25 @@ package controle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import dao.IncendioDAO;
+import dao.TelaDAO;
 import modelo.Cortina;
 import modelo.Incendio;
 import modelo.Login;
 import visao.JanelaPrincipal;
 
-public class IncendioControle implements ActionListener {
+public class TelaControle implements ActionListener {
 	private JanelaPrincipal j;
 	private Incendio inc;
-	private IncendioDAO incdao;
+	private TelaDAO incdao;
 	private Login log;
 	private Cortina c;
 
-	public IncendioControle(JanelaPrincipal j, Incendio inc, Login log, Cortina c) {
+	public TelaControle(JanelaPrincipal j, Incendio inc, Login log, Cortina c) {
 		this.j = j;
 		this.inc = inc;
 		this.log = log;
 		this.c = c;
-		incdao = new IncendioDAO();
+		incdao = new TelaDAO();
 		j.getT2().getButtonEnviar().addActionListener(this);
 		j.getTa().getButtonAutenticar().addActionListener(this);
 		j.getTa().getButtonCancelar().addActionListener(this);

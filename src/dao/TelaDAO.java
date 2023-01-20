@@ -12,13 +12,13 @@ import modelo.Cortina;
 import modelo.Incendio;
 import modelo.Login;
 
-public class IncendioDAO {
+public class TelaDAO {
 	private File arq;
 	private File arqUsuario;
 	private FileWriter fw;
 	private BufferedWriter bw;
 
-	public IncendioDAO()
+	public TelaDAO()
 	{
 		arq=new File("pedido.txt");
 		arqUsuario = new File("usuarios.txt");

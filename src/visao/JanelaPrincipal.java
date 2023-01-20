@@ -22,7 +22,7 @@ public class JanelaPrincipal extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel content;
-	private TelaIncendio2 t2 = new TelaIncendio2();
+	private TelaIncendio t2 = new TelaIncendio();
 	private TelaDeAutenticação ta = new TelaDeAutenticação();
 	private JMenu menuEngenharia;
 	private TelaCortina tc = new TelaCortina();
@@ -125,11 +125,11 @@ public class JanelaPrincipal extends JFrame{
 		content.setLayout(new CardLayout(0, 0));
 	}
 
-	public TelaIncendio2 getT2() {
+	public TelaIncendio getT2() {
 		return t2;
 	}
 
-	public void setT2(TelaIncendio2 t2) {
+	public void setT2(TelaIncendio t2) {
 		this.t2 = t2;
 	}
 

@@ -4,17 +4,17 @@ import modelo.Cortina;
 import modelo.Incendio;
 import modelo.Login;
 import visao.JanelaPrincipal;
-import visao.TelaIncendio2;
+import visao.TelaIncendio;
 
 public class App {
 	public static void main(String[] args) {
 		JanelaPrincipal jan = new JanelaPrincipal();
 		jan.setVisible(true);
 		Incendio inc = new Incendio();
-		TelaIncendio2 ti2 = new TelaIncendio2();
+		TelaIncendio ti2 = new TelaIncendio();
 		Login li = new Login();
 		Cortina co = new Cortina();
-		IncendioControle inccon = new IncendioControle(jan, inc, li, co);
+		TelaControle inccon = new TelaControle(jan, inc, li, co);
 	}
 	
 

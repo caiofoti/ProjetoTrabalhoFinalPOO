@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.LineBorder;
 
-public class TelaIncendio2 extends JPanel {
+public class TelaIncendio extends JPanel {
 
 	/**
 	 * 
@@ -33,7 +33,7 @@ public class TelaIncendio2 extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public TelaIncendio2() {
+	public TelaIncendio() {
 		setBounds(100, 100, 665, 658);
 		setLayout(new MigLayout("", "[grow]", "[grow]"));
 		
