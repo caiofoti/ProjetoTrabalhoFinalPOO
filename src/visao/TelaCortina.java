@@ -29,6 +29,8 @@ public class TelaCortina extends JPanel {
 	private JButton buttonEnviar;
 	private JButton buttonCancelar;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	//private ImageIcon imagem = new ImageIcon(getClass().getResource("TelaPedidos4.png"));
+	//private JLabel lblNewLabel_3 = new JLabel(imagem);
 
 	/**
 	 * Create the panel.
@@ -40,67 +42,68 @@ public class TelaCortina extends JPanel {
 		JScrollPane scrollPane = new JScrollPane();
 		add(scrollPane, "cell 0 0,grow");
 		
-		Label label = new Label("Solicitação de cortinas");
-		label.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 18));
-		label.setBackground(Color.WHITE);
-		label.setAlignment(Label.CENTER);
-		scrollPane.setColumnHeaderView(label);
+		Label labelHeader = new Label("Solicitação de cortinas");
+		labelHeader.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 18));
+		labelHeader.setBackground(Color.WHITE);
+		labelHeader.setAlignment(Label.CENTER);
+		scrollPane.setColumnHeaderView(labelHeader);
 		
 		JPanel panel = new JPanel();
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new MigLayout("", "[grow]", "[][10px][][][][][10px][][10px][][10px][][][15px][][][][15px][][][15px][][][15px][][][80px][15px][][][20px][]"));
 		
-		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\Caio\\Downloads\\TelaPedidos4.jpg"));
-		panel.add(lblNewLabel_3, "cell 0 0");
+		 JLabel labelFoto = new JLabel();
+		 labelFoto.setIcon(new ImageIcon("ProjetoTrabalhoFinalPOO\\src\\TelaPedidos4.png"));
+		//lblNewLabel_3.setIcon(new ImageIcon());
+		panel.add(labelFoto, "cell 0 0");
 		
-		JLabel lblNewLabel_5 = new JLabel("Serviço:");
-		lblNewLabel_5.setFont(new Font("Arial", Font.BOLD, 11));
-		panel.add(lblNewLabel_5, "flowx,cell 0 2");
+		JLabel labelServiços = new JLabel("Serviço:");
+		labelServiços.setFont(new Font("Arial", Font.BOLD, 11));
+		panel.add(labelServiços, "flowx,cell 0 2");
 		
-		JLabel lblNewLabel_4 = new JLabel("Setor encarregado: ");
-		lblNewLabel_4.setFont(new Font("Arial", Font.BOLD, 11));
-		panel.add(lblNewLabel_4, "flowx,cell 0 3");
+		JLabel labelSetor = new JLabel("Setor encarregado: ");
+		labelSetor.setFont(new Font("Arial", Font.BOLD, 11));
+		panel.add(labelSetor, "flowx,cell 0 3");
 		
-		JLabel lblNewLabel_2 = new JLabel("Quem pode solicitar:");
-		lblNewLabel_2.setFont(new Font("Arial", Font.BOLD, 11));
-		panel.add(lblNewLabel_2, "flowx,cell 0 4");
+		JLabel labelSolic = new JLabel("Quem pode solicitar:");
+		labelSolic.setFont(new Font("Arial", Font.BOLD, 11));
+		panel.add(labelSolic, "flowx,cell 0 4");
 		
-		JLabel lblNewLabel_1 = new JLabel("Geralmente atende em:");
-		lblNewLabel_1.setFont(new Font("Arial", Font.BOLD, 11));
-		panel.add(lblNewLabel_1, "flowx,cell 0 5");
+		JLabel labelAtende = new JLabel("Geralmente atende em:");
+		labelAtende.setFont(new Font("Arial", Font.BOLD, 11));
+		panel.add(labelAtende, "flowx,cell 0 5");
 		
-		JLabel lblNewLabel_6 = new JLabel("Solicitação de Mobiliário Novo");
-		lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel.add(lblNewLabel_6, "cell 0 2");
+		JLabel labelTextoServico = new JLabel("Solicitação de Mobiliário Novo");
+		labelTextoServico.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel.add(labelTextoServico, "cell 0 2");
 		
-		JLabel lblNewLabel_6_1 = new JLabel("Engenharia - Divisão de Arquitetura");
-		lblNewLabel_6_1.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel.add(lblNewLabel_6_1, "cell 0 3");
+		JLabel labelTextoEngenharia = new JLabel("Engenharia - Divisão de Arquitetura");
+		labelTextoEngenharia.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel.add(labelTextoEngenharia, "cell 0 3");
 		
-		JLabel lblNewLabel_6_2 = new JLabel(" Funcionários e Docentes.");
-		lblNewLabel_6_2.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel.add(lblNewLabel_6_2, "cell 0 4");
+		JLabel labelTextoFunc = new JLabel(" Funcionários e Docentes.");
+		labelTextoFunc.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel.add(labelTextoFunc, "cell 0 4");
 		
-		JLabel lblNewLabel_6_2_1 = new JLabel("*");
-		lblNewLabel_6_2_1.setFont(new Font("Arial", Font.BOLD, 12));
-		panel.add(lblNewLabel_6_2_1, "cell 0 5");
+		JLabel labelAsterico = new JLabel("*");
+		labelAsterico.setFont(new Font("Arial", Font.BOLD, 12));
+		panel.add(labelAsterico, "cell 0 5");
 		
-		Label label_1 = new Label("Dados de Solicitação");
-		label_1.setForeground(Color.WHITE);
-		label_1.setFont(new Font("Arial Black", Font.BOLD, 16));
-		label_1.setBackground(new Color(51, 51, 102));
-		label_1.setAlignment(Label.CENTER);
-		panel.add(label_1, "cell 0 7,grow");
+		Label labelDados = new Label("Dados de Solicitação");
+		labelDados.setForeground(Color.WHITE);
+		labelDados.setFont(new Font("Arial Black", Font.BOLD, 16));
+		labelDados.setBackground(new Color(51, 51, 102));
+		labelDados.setAlignment(Label.CENTER);
+		panel.add(labelDados, "cell 0 7,grow");
 		
 		JLabel Substituição = new JLabel("Substituição de cortina existente");
 		Substituição.setFont(new Font("Arial", Font.BOLD, 14));
 		panel.add(Substituição, "flowx,cell 0 9");
 		
-		JLabel lblNewLabel_2_1_2_1_1_1 = new JLabel("*");
-		lblNewLabel_2_1_2_1_1_1.setForeground(Color.RED);
-		lblNewLabel_2_1_2_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblNewLabel_2_1_2_1_1_1, "cell 0 9");
+		JLabel labelAsterisco1 = new JLabel("*");
+		labelAsterisco1.setForeground(Color.RED);
+		labelAsterisco1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panel.add(labelAsterisco1, "cell 0 9");
 		
 		JRadioButton buttonSim = new JRadioButton("Sim");
 		buttonGroup.add(buttonSim);
@@ -116,14 +119,14 @@ public class TelaCortina extends JPanel {
 		Ramal_Telef.setFont(new Font("Arial", Font.BOLD, 14));
 		panel.add(Ramal_Telef, "flowx,cell 0 14");
 		
-		JLabel lblNewLabel_2_1_2_1_1_1_1 = new JLabel("*");
-		lblNewLabel_2_1_2_1_1_1_1.setForeground(Color.RED);
-		lblNewLabel_2_1_2_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblNewLabel_2_1_2_1_1_1_1, "cell 0 14");
+		JLabel labelAsterisco2 = new JLabel("*");
+		labelAsterisco2.setForeground(Color.RED);
+		labelAsterisco2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panel.add(labelAsterisco2, "cell 0 14");
 		
-		JLabel lblNewLabel_6_3 = new JLabel("Apenas números.");
-		lblNewLabel_6_3.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel.add(lblNewLabel_6_3, "cell 0 15");
+		JLabel labelApenasNumeros = new JLabel("Apenas números.");
+		labelApenasNumeros.setFont(new Font("Arial", Font.PLAIN, 10));
+		panel.add(labelApenasNumeros, "cell 0 15");
 		
 		fieldTel = new JTextField();
 		panel.add(fieldTel, "cell 0 16,growx");
@@ -133,10 +136,10 @@ public class TelaCortina extends JPanel {
 		email.setFont(new Font("Arial", Font.BOLD, 14));
 		panel.add(email, "flowx,cell 0 18");
 		
-		JLabel lblNewLabel_2_1_2_1_1_1_1_1 = new JLabel("*");
-		lblNewLabel_2_1_2_1_1_1_1_1.setForeground(Color.RED);
-		lblNewLabel_2_1_2_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblNewLabel_2_1_2_1_1_1_1_1, "cell 0 18");
+		JLabel labelAstericos3 = new JLabel("*");
+		labelAstericos3.setForeground(Color.RED);
+		labelAstericos3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panel.add(labelAstericos3, "cell 0 18");
 		
 		fieldEmail = new JTextField();
 		fieldEmail.setColumns(10);
@@ -146,10 +149,10 @@ public class TelaCortina extends JPanel {
 		local.setFont(new Font("Arial", Font.BOLD, 14));
 		panel.add(local, "flowx,cell 0 21");
 		
-		JLabel lblNewLabel_2_1_2_1_1_1_1_1_1 = new JLabel("*");
-		lblNewLabel_2_1_2_1_1_1_1_1_1.setForeground(Color.RED);
-		lblNewLabel_2_1_2_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblNewLabel_2_1_2_1_1_1_1_1_1, "cell 0 21");
+		JLabel labelAsterisco4 = new JLabel("*");
+		labelAsterisco4.setForeground(Color.RED);
+		labelAsterisco4.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panel.add(labelAsterisco4, "cell 0 21");
 		
 		fieldLocal = new JTextField();
 		fieldLocal.setColumns(10);
@@ -168,15 +171,15 @@ public class TelaCortina extends JPanel {
 		responsavel.setFont(new Font("Arial", Font.BOLD, 14));
 		panel.add(responsavel, "flowx,cell 0 28");
 		
-		JLabel lblNewLabel_2_1_2_1_1_1_1_1_1_1 = new JLabel("*");
-		lblNewLabel_2_1_2_1_1_1_1_1_1_1.setForeground(Color.RED);
-		lblNewLabel_2_1_2_1_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblNewLabel_2_1_2_1_1_1_1_1_1_1, "cell 0 24");
+		JLabel labelAsterisco5 = new JLabel("*");
+		labelAsterisco5.setForeground(Color.RED);
+		labelAsterisco5.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panel.add(labelAsterisco5, "cell 0 24");
 		
-		JLabel lblNewLabel_2_1_2_1_1_1_1_1_1_2 = new JLabel("*");
-		lblNewLabel_2_1_2_1_1_1_1_1_1_2.setForeground(Color.RED);
-		lblNewLabel_2_1_2_1_1_1_1_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblNewLabel_2_1_2_1_1_1_1_1_1_2, "cell 0 28");
+		JLabel labelAsterisco6 = new JLabel("*");
+		labelAsterisco6.setForeground(Color.RED);
+		labelAsterisco6.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panel.add(labelAsterisco6, "cell 0 28");
 		
 		fieldResp = new JTextField();
 		fieldResp.setColumns(10);

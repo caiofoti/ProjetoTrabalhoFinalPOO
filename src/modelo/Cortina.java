@@ -1,5 +1,8 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cortina {
 	private String sub;
 	private String tel;
@@ -58,6 +61,34 @@ public class Cortina {
 	
 	public String toString() {
 		return sub+"#"+tel+"#"+email+"#"+local+"#"+just+"#"+resp;
+	}
+	
+	public List<String> validaCortina() {
+		ArrayList<String> listaCo = new ArrayList<String>();
+		//if (sub.equals("")) {
+		//	listaCo.add("Substituição de cortina");
+		//}
+
+		if (tel.equals("")) {
+			listaCo.add("Telefone");
+
+		}
+		if (email.equals("")) {
+			listaCo.add("Email");
+
+		}
+		if (local.equals("")) {
+			listaCo.add("Local");
+		}
+		
+		if(just.equals("")) {
+			listaCo.add("Justificativa");
+		}
+		if (resp.equals("")) {
+			listaCo.add("Responsável");
+		}
+		
+		return listaCo;
 	}
 	
 	

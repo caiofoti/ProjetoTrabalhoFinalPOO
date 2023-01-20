@@ -8,7 +8,6 @@ import modelo.Cortina;
 import modelo.Incendio;
 import modelo.Login;
 import visao.JanelaPrincipal;
-import visao.TelaIncendio2;
 
 public class IncendioControle implements ActionListener {
 	private JanelaPrincipal j;
@@ -43,17 +42,24 @@ public class IncendioControle implements ActionListener {
 		inc.setLocal(local);
 		inc.setObs(obs);
 
-		if (incdao.enviaIncendio(inc)) {
-			System.out.println("Envio feito com sucesso!");
+		if (inc.validaIncendio().size() > 0) {
 
+			System.out.println("Campos" + inc.validaIncendio()
+					+ " estão em branco, preencha todos os campos para realizar o envio!");
+		} else {
+
+			if (incdao.enviaIncendio(inc)) {
+				System.out.println("Envio feito com sucesso!");
+
+			}
+
+			else
+				System.out.println("Erro");
 		}
-
-		else
-			System.out.println("Erro");
 	}
 
 	public void enviaCortina() {
-		String subst = j.getTc().getButtonGroup().getSelection().toString();
+		// ButtonModel subst = j.getTc().getButtonGroup().getSelection();
 		String tel = j.getTc().getFieldTel().getText();
 		String email = j.getTc().getFieldEmail().getText();
 		String local = j.getTc().getFieldLocal().getText();
@@ -64,16 +70,23 @@ public class IncendioControle implements ActionListener {
 		c.setJust(just);
 		c.setLocal(local);
 		c.setResp(resp);
-		c.setSub(subst);
+		// c.setSub(subst);
 		c.setTel(tel);
 
-		if (incdao.enviaCortina(c)) {
-			System.out.println("Envio feito com sucesso!");
+		if (c.validaCortina().size() > 0) {
 
+			System.out.println(
+					"Campos" + c.validaCortina() + " estão em branco, preencha todos os campos para realizar o envio!");
+		} else {
+
+			if (incdao.enviaCortina(c)) {
+				System.out.println("Envio feito com sucesso!");
+
+			}
+
+			else
+				System.out.println("Erro");
 		}
-
-		else
-			System.out.println("Erro");
 	}
 
 	public void consultaLogin() {
@@ -84,12 +97,19 @@ public class IncendioControle implements ActionListener {
 		String senha = j.getTa().getFieldSenha().getText();
 		log.setSenha(senha);
 
-		if (incdao.consultaLogin(log)) {
-			System.out.println("Usuário encontrado!");
-			j.getMenuEngenharia().setEnabled(true);
+		if (log.validaLogin().size() > 0) {
+			System.out.println(
+					"Campos" + log.validaLogin() + " estão em branco, preencha todos os campos para autenticar!");
 		} else {
-			System.out.println("Usuário não encontrado!");
+			if (incdao.consultaLogin(log)) {
+				System.out.println("Usuário encontrado!");
+				j.getMenuEngenharia().setEnabled(true);
+			} else {
+				System.out.println("Usuário não encontrado!");
+			}
+
 		}
+
 	}
 
 	@Override
@@ -100,7 +120,7 @@ public class IncendioControle implements ActionListener {
 			consultaLogin();
 		else if (e.getActionCommand().equals("Enviar")) {
 			enviaCortina();
-			System.out.println("teste");
+			// System.out.println("teste");
 		}
 	}
 }
