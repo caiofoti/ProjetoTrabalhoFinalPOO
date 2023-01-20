@@ -14,8 +14,7 @@ public class App {
 		TelaIncendio ti2 = new TelaIncendio();
 		Login li = new Login();
 		Cortina co = new Cortina();
-		TelaControle inccon = new TelaControle(jan, inc, li, co);
+		TelaControle telacon = new TelaControle(jan, inc, li, co);
 	}
-	
 
 }

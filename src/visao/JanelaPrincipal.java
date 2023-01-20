@@ -14,6 +14,9 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class JanelaPrincipal extends JFrame{
 
@@ -123,6 +126,15 @@ public class JanelaPrincipal extends JFrame{
 
 		setContentPane(content);
 		content.setLayout(new CardLayout(0, 0));
+		
+		JPanel panel = new JPanel();
+		content.add(panel, "name_581334450997900");
+		panel.setLayout(new BorderLayout(0, 0));
+		
+		JLabel labelSistemas = new JLabel("Sistema de Pedidos Internos");
+		labelSistemas.setHorizontalAlignment(SwingConstants.CENTER);
+		labelSistemas.setFont(new Font("Tahoma", Font.BOLD, 40));
+		panel.add(labelSistemas, BorderLayout.CENTER);
 	}
 
 	public TelaIncendio getT2() {
