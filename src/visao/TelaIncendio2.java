@@ -49,16 +49,16 @@ public class TelaIncendio2 extends JPanel {
 		panel.add(lblNewLabel_3, "cell 0 0,grow");
 		
 		JLabel lblNewLabel_5 = new JLabel("Serviço:");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 11));
-		panel.add(lblNewLabel_5, "cell 0 2");
+		lblNewLabel_5.setFont(new Font("Arial", Font.BOLD, 11));
+		panel.add(lblNewLabel_5, "flowx,cell 0 2");
 		
 		JLabel lblNewLabel_4 = new JLabel("Setor encarregado: ");
 		lblNewLabel_4.setFont(new Font("Arial", Font.BOLD, 11));
-		panel.add(lblNewLabel_4, "cell 0 3");
+		panel.add(lblNewLabel_4, "flowx,cell 0 3");
 		
 		JLabel lblNewLabel_2 = new JLabel("Quem pode solicitar:");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		panel.add(lblNewLabel_2, "cell 0 4");
+		lblNewLabel_2.setFont(new Font("Arial", Font.BOLD, 11));
+		panel.add(lblNewLabel_2, "flowx,cell 0 4");
 		
 		JLabel lblNewLabel_1 = new JLabel("Geralmente atende em:");
 		lblNewLabel_1.setFont(new Font("Arial", Font.BOLD, 11));
@@ -150,7 +150,7 @@ public class TelaIncendio2 extends JPanel {
 		panel.add(lblNewLabel_10_1, "cell 0 26");
 		
 		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "Obs", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		textArea_1.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "Descri\u00E7\u00E3o", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel.add(textArea_1, "cell 0 27,grow");
 		
 		JButton btnNewButton = new JButton("Enviar");
@@ -160,6 +160,18 @@ public class TelaIncendio2 extends JPanel {
 		JButton btnNewButton_1 = new JButton("Cancelar");
 		btnNewButton_1.setFont(new Font("Arial", Font.BOLD, 12));
 		panel.add(btnNewButton_1, "cell 0 29,alignx center,aligny center");
+		
+		JLabel lblNewLabel_6 = new JLabel("Solicitação de Mobiliário Novo");
+		lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel.add(lblNewLabel_6, "cell 0 2");
+		
+		JLabel lblNewLabel_6_1 = new JLabel("Engenharia - Divisão de Arquitetura");
+		lblNewLabel_6_1.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel.add(lblNewLabel_6_1, "cell 0 3");
+		
+		JLabel lblNewLabel_6_2 = new JLabel(" Funcionários e Docentes.");
+		lblNewLabel_6_2.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel.add(lblNewLabel_6_2, "cell 0 4");
 
 	}
 
