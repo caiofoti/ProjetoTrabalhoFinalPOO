@@ -79,10 +79,10 @@ public class JanelaPrincipal extends JFrame {
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Solicitação de cortinas");
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("EPI's");
+		JMenuItem mntmNewMenuItem = new JMenuItem("Manuntenção dos Sistemas de Incêndio");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaEngenhariaEPIs p2 = new TelaEngenhariaEPIs();
+				TelaIncendio p2 = new TelaIncendio();
 				p2.setSize(665, 658);
 				p2.setLocation(0, 0);
 				

@@ -5,27 +5,22 @@ import java.awt.EventQueue;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import net.miginfocom.swing.MigLayout;
 import java.awt.Label;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
-import javax.swing.Box;
-import javax.swing.ScrollPaneConstants;
 import javax.swing.JTextField;
-import java.awt.Component;
-import java.awt.Dimension;
 import javax.swing.JTextArea;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.LineBorder;
 import javax.swing.JComboBox;
-import java.awt.TextArea;
 import javax.swing.JButton;
-import javax.swing.DefaultComboBoxModel;
 
 public class TelaIncendio extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 
@@ -136,7 +131,6 @@ public class TelaIncendio extends JFrame {
 		panel.add(lblNewLabel_2_1_2_1_1_1_1, "cell 1 16");
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"UFCSPA", "", "<> ENGENHARIA", "", "MANUNTENÇÃO DOS SISTEMAS DE INCÊNDIO", "Alarmes", "Componentes do SPK", "Componentes dos Hidrantes", "Iluminação de Emergência e Balizamento", "Portas Corta Fogo", "Sistema de pressurização da escada do P2"}));
 		comboBox.setForeground(Color.DARK_GRAY);
 		comboBox.setFont(new Font("Arial", Font.PLAIN, 11));
 		comboBox.setBackground(Color.WHITE);
