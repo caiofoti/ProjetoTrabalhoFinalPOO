@@ -10,7 +10,7 @@ import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class TelaDeAutenticação extends JPanel {
+public class TelaDeAutenticar extends JPanel {
 	
 	/**
 	 * 
@@ -24,7 +24,7 @@ public class TelaDeAutenticação extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public TelaDeAutenticação() {
+	public TelaDeAutenticar() {
 		setBounds(100, 100, 665, 658);
 		setLayout(new MigLayout("", "[grow]", "[grow]"));
 		

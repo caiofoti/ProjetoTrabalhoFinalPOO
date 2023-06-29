@@ -97,19 +97,19 @@ public class TelaIncendio extends JPanel {
 		irregArea.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "Descri\u00E7\u00E3o", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel.add(irregArea, "cell 0 13,grow");
 		
-		JLabel lblNewLabel_2_1_2_1_1_1 = new JLabel("*");
-		lblNewLabel_2_1_2_1_1_1.setForeground(Color.RED);
-		lblNewLabel_2_1_2_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblNewLabel_2_1_2_1_1_1, "cell 0 11");
+		JLabel labelAsterisco = new JLabel("*");
+		labelAsterisco.setForeground(Color.RED);
+		labelAsterisco.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panel.add(labelAsterisco, "cell 0 11");
 		
 		JLabel LabelSist = new JLabel("Sistema");
 		LabelSist.setFont(new Font("Arial", Font.BOLD, 14));
 		panel.add(LabelSist, "flowx,cell 0 15");
 		
-		JLabel lblNewLabel_2_1_2_1_1_1_1 = new JLabel("*");
-		lblNewLabel_2_1_2_1_1_1_1.setForeground(Color.RED);
-		lblNewLabel_2_1_2_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblNewLabel_2_1_2_1_1_1_1, "cell 0 15");
+		JLabel labelAsterisco1 = new JLabel("*");
+		labelAsterisco1.setForeground(Color.RED);
+		labelAsterisco1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panel.add(labelAsterisco1, "cell 0 15");
 		
 		comboSist = new JComboBox<String>();
 		comboSist.setForeground(Color.DARK_GRAY);
@@ -130,10 +130,10 @@ public class TelaIncendio extends JPanel {
 		labelLocal.setFont(new Font("Arial", Font.BOLD, 14));
 		panel.add(labelLocal, "flowx,cell 0 18");
 		
-		JLabel lblNewLabel_2_1_2_1_1_1_1_1 = new JLabel("*");
-		lblNewLabel_2_1_2_1_1_1_1_1.setForeground(Color.RED);
-		lblNewLabel_2_1_2_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblNewLabel_2_1_2_1_1_1_1_1, "cell 0 18");
+		JLabel labelAsterisco2 = new JLabel("*");
+		labelAsterisco2.setForeground(Color.RED);
+		labelAsterisco2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panel.add(labelAsterisco2, "cell 0 18");
 		
 		JLabel labelDetalhesLocal = new JLabel("Prédio/andar ou ponto de referência");
 		labelDetalhesLocal.setFont(new Font("Arial", Font.PLAIN, 11));
@@ -151,10 +151,10 @@ public class TelaIncendio extends JPanel {
 		fieldContato.setColumns(10);
 		panel.add(fieldContato, "cell 0 23,growx");
 		
-		JLabel lblNewLabel_2_1_2_1_1_1_1_1_1 = new JLabel("*");
-		lblNewLabel_2_1_2_1_1_1_1_1_1.setForeground(Color.RED);
-		lblNewLabel_2_1_2_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblNewLabel_2_1_2_1_1_1_1_1_1, "cell 0 22");
+		JLabel labelAsterisco3 = new JLabel("*");
+		labelAsterisco3.setForeground(Color.RED);
+		labelAsterisco3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panel.add(labelAsterisco3, "cell 0 22");
 		
 		JLabel LabelObserv = new JLabel("Observações");
 		LabelObserv.setFont(new Font("Arial", Font.BOLD, 14));

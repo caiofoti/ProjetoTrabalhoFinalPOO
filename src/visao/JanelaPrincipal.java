@@ -26,7 +26,7 @@ public class JanelaPrincipal extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel content;
 	private TelaIncendio t2 = new TelaIncendio();
-	private TelaDeAutenticação ta = new TelaDeAutenticação();
+	private TelaDeAutenticar ta = new TelaDeAutenticar();
 	private JMenu menuEngenharia;
 	private TelaCortina tc = new TelaCortina();
 	private JMenuItem itemSair;
@@ -145,11 +145,11 @@ public class JanelaPrincipal extends JFrame{
 		this.t2 = t2;
 	}
 
-	public TelaDeAutenticação getTa() {
+	public TelaDeAutenticar getTa() {
 		return ta;
 	}
 
-	public void setTa(TelaDeAutenticação ta) {
+	public void setTa(TelaDeAutenticar ta) {
 		this.ta = ta;
 	}
 

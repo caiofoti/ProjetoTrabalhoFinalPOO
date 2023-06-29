@@ -1,9 +1,11 @@
 package controle;
 
+import dao.LoginDAO;
 import modelo.Cortina;
 import modelo.Incendio;
 import modelo.Login;
 import visao.JanelaPrincipal;
+import visao.TelaDeAutenticar;
 import visao.TelaIncendio;
 
 public class App {
@@ -14,7 +16,10 @@ public class App {
 		TelaIncendio ti2 = new TelaIncendio();
 		Login li = new Login();
 		Cortina co = new Cortina();
-		TelaControle telacon = new TelaControle(jan, inc, li, co);
+		TelaDeAutenticar ta = new TelaDeAutenticar();
+		LoginDAO logindao = new LoginDAO();
+
+		LoginControle logcon = new LoginControle(jan, li);
 	}
 
 }
