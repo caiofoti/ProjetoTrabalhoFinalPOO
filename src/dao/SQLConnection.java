@@ -28,7 +28,7 @@ public class SQLConnection {
 			String mydatabase = "meubanco";
 			String url = "jdbc:mysql://" + serverName + ":3306/" + mydatabase;
 			String username = "root";
-			String password = "VIctor288632";
+			String password = "123456";
 			connection = DriverManager.getConnection(url, username, password);
 
 			if (connection != null) {

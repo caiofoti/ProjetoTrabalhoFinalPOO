@@ -11,64 +11,58 @@ import visao.JanelaPrincipal;
 import visao.TelaDeAutenticar;
 
 public class LoginControle implements ActionListener {
-	
+
 	private Login log;
 	private JanelaPrincipal jan;
 	private LoginDAO ldao;
 	private TelaDeAutenticar ta;
-	
-	public LoginControle(JanelaPrincipal j, Login l)
-	{
-		jan=j;
-		log=l;
-		ldao= new LoginDAO();
+
+	public LoginControle(JanelaPrincipal j, Login l) {
+		jan = j;
+		log = l;
+		ldao = new LoginDAO();
 		registraListeners();
 	}
-	
-	public void registraListeners()
-	{
+
+	public void registraListeners() {
 		jan.getTa().getButtonAutenticar().addActionListener(this);
 		jan.getTa().getButtonCancelar().addActionListener(this);
-		
-		
+		jan.getItemSair().addActionListener(this);
+
 	}
-	
-	public void autenticar()
-	{
-		if(!log.validaUsuario(jan.getTa().getFieldUsuario().getText()))
-		{
+
+	public void autenticar() {
+		if (!log.validaUsuario(jan.getTa().getFieldUsuario().getText())) {
 			JOptionPane.showMessageDialog(jan.getContentPane(), "Informe 10 caracteres no máximo!");
-		}
-		else
-		{
+		} else {
 			log.setUsuario(jan.getTa().getFieldUsuario().getText());
 			log.setSenha(String.valueOf(jan.getTa().getFieldSenha().getPassword()));
-			
-			if(ldao.autenticaUsuario(log))
-			{
-				
+
+			if (ldao.autenticaUsuario(log)) {
+
 				System.out.println("Usuario encontrado!");
 				JOptionPane.showMessageDialog(jan.getContentPane(), "Usuário encontrado!");
 				jan.getMenuEngenharia().setEnabled(true);
-			}
-			else
-			{
+			} else {
 				JOptionPane.showMessageDialog(jan.getContentPane(), "Falha na autenticação!");
-		
+
 			}
 		}
 	}
 
-	
-	
+	public void sair() {
+
+		int resp = JOptionPane.showConfirmDialog(jan.getContentPane(), "Realmente deseja sair?");
+		if (resp == 0)
+			jan.setVisible(false);
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getActionCommand().equals("Autentica"))
-		{
-			autenticar();
+		if(e.getActionCommand().equals("Autentica")) {
+			System.out.println("OIIIIIIIIII");
 		}
-	
 		
 	}
 

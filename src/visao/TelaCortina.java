@@ -29,9 +29,7 @@ public class TelaCortina extends JPanel {
 	private JButton buttonEnviar;
 	private JButton buttonCancelar;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	//private ImageIcon imagem = new ImageIcon(getClass().getResource("TelaPedidos4.png"));
-	//private JLabel lblNewLabel_3 = new JLabel(imagem);
-
+	
 	/**
 	 * Create the panel.
 	 */
