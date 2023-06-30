@@ -8,14 +8,13 @@ import javax.swing.JOptionPane;
 import dao.LoginDAO;
 import modelo.Login;
 import visao.JanelaPrincipal;
-import visao.TelaDeAutenticar;
 
 public class LoginControle implements ActionListener {
 
 	private Login log;
 	private JanelaPrincipal jan;
 	private LoginDAO ldao;
-	//private TelaDeAutenticar ta;
+
 
 	public LoginControle(JanelaPrincipal j, Login l) {
 		jan = j;
@@ -29,8 +28,6 @@ public class LoginControle implements ActionListener {
 		jan.getItemSair().addActionListener(this);
 		jan.getTa().getButtonAutenticar().addActionListener(this);
 		jan.getItemSair().addActionListener(this);
-		
-
 	}
 
 	public void autenticar() {

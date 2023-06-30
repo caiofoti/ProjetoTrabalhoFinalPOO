@@ -28,6 +28,7 @@ public class TelaCortina extends JPanel {
 	private JTextField fieldResp;
 	private JButton buttonEnviar;
 	private JButton buttonCancelar;
+	private JTextArea areaJust;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	
 	/**
@@ -113,6 +114,9 @@ public class TelaCortina extends JPanel {
 		buttonNo.setFont(new Font("Arial", Font.PLAIN, 11));
 		panel.add(buttonNo, "cell 0 12");
 		
+		buttonSim.setActionCommand("Sim");
+		buttonNo.setActionCommand("Não");
+		
 		JLabel Ramal_Telef = new JLabel("Ramal/Telefone");
 		Ramal_Telef.setFont(new Font("Arial", Font.BOLD, 14));
 		panel.add(Ramal_Telef, "flowx,cell 0 14");
@@ -160,7 +164,7 @@ public class TelaCortina extends JPanel {
 		justificativa.setFont(new Font("Arial", Font.BOLD, 14));
 		panel.add(justificativa, "flowx,cell 0 24");
 		
-		JTextArea areaJust = new JTextArea();
+		areaJust = new JTextArea();
 		areaJust.setFont(new Font("Arial", Font.PLAIN, 13));
 		areaJust.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel.add(areaJust, "cell 0 25 1 2,grow");
@@ -205,6 +209,15 @@ public class TelaCortina extends JPanel {
 
 	}
 
+	public JTextArea getAreaJust() {
+		return areaJust;
+	}
+
+	public void setAreaJust(JTextArea areaJust) {
+		this.areaJust = areaJust;
+	}
+		
+	
 	public JTextField getFieldTel() {
 		return fieldTel;
 	}
@@ -256,10 +269,7 @@ public class TelaCortina extends JPanel {
 	public ButtonGroup getButtonGroup() {
 		return buttonGroup;
 	}
-		
-	
-	
-	
-	
+
+
 	
 	}
