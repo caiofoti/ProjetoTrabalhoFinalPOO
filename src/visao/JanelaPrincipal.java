@@ -72,6 +72,10 @@ public class JanelaPrincipal extends JFrame{
 		
 		content.setLayout(card);
 		
+		content.add(ta, "tela1");
+		content.add(t2, "tela-inc");
+		content.add(tc, "tela-cort");
+		
 		menuPrincipal.add(itemAutenticar);
 		
 		 itemSair = new JMenuItem("Sair");
@@ -113,9 +117,7 @@ public class JanelaPrincipal extends JFrame{
 		menuBar.add(menuSEI);
 		
 		
-		content.add(ta, "tela1");
-		content.add(t2, "tela-inc");
-		content.add(tc, "tela-cort");
+		
 		
 		
 		

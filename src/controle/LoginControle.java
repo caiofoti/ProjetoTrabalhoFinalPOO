@@ -15,7 +15,7 @@ public class LoginControle implements ActionListener {
 	private Login log;
 	private JanelaPrincipal jan;
 	private LoginDAO ldao;
-	private TelaDeAutenticar ta;
+	//private TelaDeAutenticar ta;
 
 	public LoginControle(JanelaPrincipal j, Login l) {
 		jan = j;
@@ -25,9 +25,11 @@ public class LoginControle implements ActionListener {
 	}
 
 	public void registraListeners() {
-		jan.getTa().getButtonAutenticar().addActionListener(this);
 		jan.getTa().getButtonCancelar().addActionListener(this);
 		jan.getItemSair().addActionListener(this);
+		jan.getTa().getButtonAutenticar().addActionListener(this);
+		jan.getItemSair().addActionListener(this);
+		
 
 	}
 
@@ -61,7 +63,10 @@ public class LoginControle implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getActionCommand().equals("Autentica")) {
-			System.out.println("OIIIIIIIIII");
+			autenticar();
+		}
+		else if (e.getActionCommand().equals("Sair")) {
+			sair();
 		}
 		
 	}

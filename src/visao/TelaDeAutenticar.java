@@ -49,7 +49,7 @@ public class TelaDeAutenticar extends JPanel {
 		
 		 buttonAutenticar = new JButton("Autentica");
 		 buttonAutenticar.setFont(new Font("Arial", Font.BOLD, 11));
-		panel.add(buttonAutenticar, "flowx,cell 1 9,alignx center");
+		 panel.add(buttonAutenticar, "flowx,cell 1 9,alignx center");
 		
 		 buttonCancelar = new JButton("Cancelar");
 		 buttonCancelar.addActionListener(new ActionListener() {
