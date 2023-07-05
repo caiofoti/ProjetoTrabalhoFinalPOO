@@ -111,6 +111,7 @@ public class TelaCortina extends JPanel {
 		
 		JRadioButton buttonNo = new JRadioButton("Não");
 		buttonGroup.add(buttonNo);
+		buttonGroup.add(null);
 		buttonNo.setFont(new Font("Arial", Font.PLAIN, 11));
 		panel.add(buttonNo, "cell 0 12");
 		

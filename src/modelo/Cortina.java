@@ -17,6 +17,16 @@ public class Cortina {
 		this.just = just;
 		this.resp = resp;
 	}
+	
+	public boolean verficaCampo() {
+		getEmail().isEmpty();
+		getSub().isEmpty();
+		getJust().isEmpty();
+		getLocal().isEmpty();
+		getTel().isEmpty();
+		getResp().isEmpty();	
+		return true;
+	}
 
 	public Cortina() {
 		// TODO Auto-generated constructor stub
