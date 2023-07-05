@@ -18,8 +18,9 @@ public class App {
 		Cortina co = new Cortina();
 		TelaDeAutenticar ta = new TelaDeAutenticar();
 		LoginDAO logindao = new LoginDAO();
-
 		LoginControle logcon = new LoginControle(jan, li);
+		CortinaControle corcon = new CortinaControle(jan, co);
+		IncendioControle inccon = new IncendioControle(jan, inc);
 	}
 
 }

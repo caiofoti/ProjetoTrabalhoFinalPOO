@@ -30,6 +30,7 @@ public class JanelaPrincipal extends JFrame{
 	private JMenu menuEngenharia;
 	private TelaCortina tc = new TelaCortina();
 	private JMenuItem itemSair;
+	private CardLayout card;
 
 	/**
 	 * Launch the application.
@@ -63,16 +64,18 @@ public class JanelaPrincipal extends JFrame{
 		menuBar.add(menuPrincipal);
 		
 		JMenuItem itemAutenticar = new JMenuItem("Autenticar");
-		itemAutenticar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ta.setSize(665, 658);
-				ta.setLocation(0, 0);
-				
-				content.removeAll();
-				content.add(ta, BorderLayout.CENTER);
-				content.revalidate();
-			}
-		});
+		
+		content = new JPanel();
+		content.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		card = new CardLayout();
+		
+		content.setLayout(card);
+		
+		content.add(ta, "tela1");
+		content.add(t2, "tela-inc");
+		content.add(tc, "tela-cort");
+		
 		menuPrincipal.add(itemAutenticar);
 		
 		 itemSair = new JMenuItem("Sair");
@@ -87,31 +90,22 @@ public class JanelaPrincipal extends JFrame{
 		menuBar.add(menuEngenharia);
 		
 		JMenuItem itemCortinas = new JMenuItem("Solicitação de cortinas");
+		itemCortinas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				card.show(content, "tela-cort");
+				
+			}
+		});
 		menuEngenharia.add(itemCortinas);
 		
 		JMenuItem itemIncendio = new JMenuItem("Manuntenção dos Sistemas de Incêndio");
 		itemIncendio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				t2.setSize(665, 658);
-				t2.setLocation(0, 0);
-				
-				content.removeAll();
-				content.add(t2, BorderLayout.CENTER);
-				content.revalidate();
+				card.show(content, "tela-inc");
 			}
 		});
 		
-		
-		itemCortinas.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tc.setSize(665, 658);
-				tc.setLocation(0, 0);
-				
-				content.removeAll();
-				content.add(tc, BorderLayout.CENTER);
-				content.revalidate();
-			}
-		});
+	
 		menuEngenharia.add(itemIncendio);
 		
 		JMenu menuProplan = new JMenu("PROPLAN");
@@ -121,20 +115,22 @@ public class JanelaPrincipal extends JFrame{
 		JMenu menuSEI = new JMenu("SEI");
 		menuSEI.setEnabled(false);
 		menuBar.add(menuSEI);
-		content = new JPanel();
-		content.setBorder(new EmptyBorder(5, 5, 5, 5));
-
-		setContentPane(content);
-		content.setLayout(new CardLayout(0, 0));
+		
+		
+		
+		
+		
 		
 		JPanel panel = new JPanel();
 		content.add(panel, "name_581334450997900");
-		panel.setLayout(new BorderLayout(0, 0));
+		panel.setLayout(new CardLayout(0, 0));
 		
 		JLabel labelSistemas = new JLabel("Sistema de Pedidos Internos");
 		labelSistemas.setHorizontalAlignment(SwingConstants.CENTER);
 		labelSistemas.setFont(new Font("Tahoma", Font.BOLD, 40));
-		panel.add(labelSistemas, BorderLayout.CENTER);
+		panel.add(labelSistemas, "name_6323191062300");
+		
+		setContentPane(content);
 	}
 
 	public TelaIncendio getT2() {
