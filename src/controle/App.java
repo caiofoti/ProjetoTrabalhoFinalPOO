@@ -20,6 +20,7 @@ public class App {
 		LoginDAO logindao = new LoginDAO();
 		LoginControle logcon = new LoginControle(jan, li);
 		CortinaControle corcon = new CortinaControle(jan, co);
+		IncendioControle inccon = new IncendioControle(jan, inc);
 	}
 
 }
