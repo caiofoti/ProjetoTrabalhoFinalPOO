@@ -44,13 +44,30 @@ public class IncendioControle implements ActionListener{
 		}
 	}
 	
+	public void limpaTela() {
+		jan.getT2().getIrregArea().setText(null);
+		jan.getT2().getComboSist().setSelectedItem("");
+		jan.getT2().getFieldLocal().setText(null);
+		jan.getT2().getFieldContato().setText(null);
+		jan.getT2().getObsArea().setText(null);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getActionCommand().equals("Envio")) {
 			enviarIncendio();
 		}
-		
+		else if (e.getActionCommand().equals("Cancelar")) {
+			limpaTela();
+		}
 		
 		
 		

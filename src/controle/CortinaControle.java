@@ -44,6 +44,15 @@ public class CortinaControle implements ActionListener {
 
 	}
 
+	public void limpaTela() {
+		jan.getTc().getFieldEmail().setText(null);
+		jan.getTc().getFieldLocal().setText(null);
+		jan.getTc().getFieldResp().setText(null);
+		jan.getTc().getFieldTel().setText(null);
+		jan.getTc().getButtonGroup().setSelected(null, false);
+		jan.getTc().getAreaJust().setText(null);
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
