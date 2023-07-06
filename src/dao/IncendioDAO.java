@@ -21,15 +21,16 @@ public class IncendioDAO {
 
 		con = SQLConnection.abrirConexaoMySQL();
 
-		sql = "INSERT INTO Incendio VALUES(?,?,?,?,?)";
+		sql = "INSERT INTO Incendio VALUES(?,?,?,?,?,?)";
 
 		try {
 			prep = con.prepareStatement(sql);
-			prep.setString(1, inc.getIrreg());
-			prep.setString(2, inc.getSist());
-			prep.setString(3, inc.getLocal());
-			prep.setString(4, inc.getFone());
-			prep.setString(5, inc.getObs());
+			prep.setString(1, inc.geraID());
+			prep.setString(2, inc.getIrreg());
+			prep.setString(3, inc.getSist());
+			prep.setString(4, inc.getLocal());
+			prep.setString(5, inc.getFone());
+			prep.setString(6, inc.getObs());
 		
 			lin = prep.executeUpdate();
 

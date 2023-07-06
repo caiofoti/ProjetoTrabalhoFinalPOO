@@ -13,12 +13,14 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.JScrollBar;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.JComboBox;
 
 public class TelaPedidosInternos extends JPanel {
 	private JTextField fieldID;
 	private JButton buttonConsultar;
 	private JButton buttonRemover;
 	private JTextArea areaConsulta;
+	private JComboBox<String> comboTipo;
 
 	/**
 	 * Create the panel.
@@ -34,13 +36,16 @@ public class TelaPedidosInternos extends JPanel {
 		labelHeader.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 18));
 		labelHeader.setBackground(Color.WHITE);
 		labelHeader.setAlignment(Label.CENTER);
-		add(labelHeader, "cell 0 1 4 1,alignx center,aligny top");
+		add(labelHeader, "cell 0 1 4 1,growx,aligny center");
+		
+		JLabel labelTipo = new JLabel("Tipo de pedido: ");
+		add(labelTipo, "flowx,cell 0 2");
 		
 		JLabel labelPedido = new JLabel("Digite o ID do pedido:");
 		add(labelPedido, "flowx,cell 0 3 2 1");
 		
 		fieldID = new JTextField();
-		add(fieldID, "cell 0 3,alignx left,aligny center");
+		add(fieldID, "cell 0 3 2 1,alignx left,aligny center");
 		fieldID.setColumns(20);
 		
 		JLabel labelConsulta = new JLabel("Consulta:");
@@ -50,7 +55,7 @@ public class TelaPedidosInternos extends JPanel {
 		add(buttonConsultar, "flowx,cell 3 3,alignx left,aligny center");
 		
 		buttonRemover = new JButton("Remover");
-		add(buttonRemover, "cell 3 3 2 1,alignx right");
+		add(buttonRemover, "cell 3 3,alignx right");
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -60,6 +65,13 @@ public class TelaPedidosInternos extends JPanel {
 		areaConsulta.setLineWrap(true);
 		areaConsulta.setWrapStyleWord(true);
 		scrollPane.setViewportView(areaConsulta);
+		
+		comboTipo = new JComboBox();
+		add(comboTipo, "cell 0 2 2 1,growx");
+		comboTipo.addItem(" 		");
+		comboTipo.addItem("Pedidos cortinas");
+		comboTipo.addItem("Pedidos incêndio");
+		comboTipo.addItem("Pedidos EPIS");
 
 	}
 
@@ -96,6 +108,15 @@ public class TelaPedidosInternos extends JPanel {
 	public void setAreaConsulta(JTextArea areaConsulta) {
 		this.areaConsulta = areaConsulta;
 	}
+
+	public JComboBox<String> getComboTipo() {
+		return comboTipo;
+	}
+
+	public void setComboTipo(JComboBox<String> comboTipo) {
+		this.comboTipo = comboTipo;
+	}
+	
 	
 	
 

@@ -23,7 +23,7 @@ public class App {
 		LoginControle logcon = new LoginControle(jan, li);
 		CortinaControle corcon = new CortinaControle(jan, co);
 		IncendioControle inccon = new IncendioControle(jan, inc);
-		PedidoControle pedcon = new PedidoControle(jan, p);
+		PedidoControle pedcon = new PedidoControle(jan, p, inc);
 	}
 
 }

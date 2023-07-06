@@ -2,6 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Incendio {
 	private String irreg;
@@ -9,6 +10,7 @@ public class Incendio {
 	private String local;
 	private String fone;
 	private String obs;
+	private String ID;
 
 	public Incendio(String irreg, String sist, String local, String fone, String obs) {
 		super();
@@ -17,6 +19,13 @@ public class Incendio {
 		this.local = local;
 		this.fone = fone;
 		this.obs = obs;
+	}
+	
+	public String geraID() {
+		Random random = new Random();
+		int numeroAleatorio = random.nextInt(999999) + 1;
+		ID = String.valueOf(numeroAleatorio);
+		return String.valueOf(numeroAleatorio);
 	}
 	
 	public boolean verficaCampo() {
@@ -78,28 +87,13 @@ public class Incendio {
 		this.obs = obs;
 	}
 
-	public String toString() {
-		return irreg + "#" + sist + "#" + local + "#" + fone + "#" + obs;
+	public String getID() {
+		return ID;
 	}
 
-	public List<String> validaIncendio() {
-		ArrayList<String> listaInc = new ArrayList<String>();
-		if (irreg.equals("")) {
-			listaInc.add("Irregularidades");
-		}
-
-		if (sist.equals("")) {
-			listaInc.add("Sistema");
-
-		}
-		if (local.equals("")) {
-			listaInc.add("Local");
-
-		}
-		if (fone.equals("")) {
-			listaInc.add("Fone para contato");
-
-		}
-		return listaInc;
+	public void setID(String iD) {
+		ID = iD;
 	}
+
+	
 }

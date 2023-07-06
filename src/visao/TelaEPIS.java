@@ -32,6 +32,9 @@ public class TelaEPIS extends JPanel {
 	private JTextArea areaJust;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JTextField textField;
+	private JCheckBox luvaSegBor;
+	private JCheckBox luvaSegPro;
+	private JCheckBox luvaVaq;
 
 	/**
 	 * Create the panel.
@@ -101,47 +104,50 @@ public class TelaEPIS extends JPanel {
 		labelAsterisco1.setForeground(Color.RED);
 		labelAsterisco1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		panel.add(labelAsterisco1, "cell 0 9");
-
-		JCheckBox checkBox1 = new JCheckBox("Luvas de segurança confeccionada em borracha nitrílica");
-		panel.add(checkBox1, "cell 0 10");
-		JCheckBox checkBox2 = new JCheckBox("Luvas de segurança para procedimentos não cirúrgicos");
-		panel.add(checkBox2, "cell 0 11");
-		JCheckBox checkBox3 = new JCheckBox("Luvas de vaqueta - Raspas de couro (item em falta)");
-		panel.add(checkBox3, "cell 0 12");
-		JCheckBox checkBox4 = new JCheckBox("Luvas de segurança para alta temperatura (pedido de reposição do EPI somente mediante a devolução do EPI usado)");
-		panel.add(checkBox4, "cell 0 13");
-		JCheckBox checkBox5 = new JCheckBox("Luvas de segurança para peças ou produtos congelados");
-		panel.add(checkBox5, "cell 0 14");
-		JCheckBox checkBox6 = new JCheckBox("Manga de segurança");
-		panel.add(checkBox6, "cell 0 15");
-		JCheckBox checkBox7 = new JCheckBox("Avental confeccionado em TNT");
-		panel.add(checkBox7, "cell 0 16");
-		JCheckBox checkBox8 = new JCheckBox("Cartucho Químico GA/VO, com baioneta");
-		panel.add(checkBox8, "cell 0 17");
-		JCheckBox checkBox9 = new JCheckBox("Cartucho Químico Formaldeído, com baioneta");
-		panel.add(checkBox9, "cell 0 18");
-		JCheckBox checkBox10 = new JCheckBox("Respirador Semi facial com manutenção");
-		panel.add(checkBox10, "cell 0 19");
-		JCheckBox checkBox11 = new JCheckBox("Respirador purificador de ar tipo peça facial inteira");
-		panel.add(checkBox11, "cell 0 20");
-		JCheckBox checkBox12 = new JCheckBox("Máscara cirúrgica de tripla camada");
-		panel.add(checkBox12, "cell 0 21");
-		JCheckBox checkBox13 = new JCheckBox("Respirador semi-facial PPF2 (Máscara PFF2)");
-		panel.add(checkBox13, "cell 0 22");
-		JCheckBox checkBox14 = new JCheckBox("Protetor Auditivo Tradicional, tipo Concha, dobrável");
-		panel.add(checkBox14, "cell 0 23");
-		JCheckBox checkBox15 = new JCheckBox("Protetor Auricular de Silicone tipo plug");
-		panel.add(checkBox15, "cell 0 24");
-	JCheckBox checkBox16 = new JCheckBox("Sapatilha descartável (Propé)");
-		panel.add(checkBox16, "cell 0 25");
-		JCheckBox checkBox17 = new JCheckBox("Touca descartável branca");
-		panel.add(checkBox17, "cell 0 26");
-		JCheckBox checkBox18 = new JCheckBox("Óculos de Segurança em policarbonato");
-		panel.add(checkBox18, "cell 0 27");
-		JCheckBox checkBox19 = new JCheckBox("Óculos de Segurança ampla visão");
-		panel.add(checkBox19, "cell 0 28");
-		JCheckBox checkBox20 = new JCheckBox("Escudo de proteção facial");
-		panel.add(checkBox20, "cell 0 29");
+		
+		
+// ### DECLARAÇÕES
+		
+		 luvaSegBor = new JCheckBox("Luvas de segurança confeccionada em borracha nitrílica");
+		panel.add(luvaSegBor, "cell 0 10");
+		 luvaSegPro = new JCheckBox("Luvas de segurança para procedimentos não cirúrgicos");
+		panel.add(luvaSegPro, "cell 0 11");
+		 luvaVaq = new JCheckBox("Luvas de vaqueta - Raspas de couro (item em falta)");
+		panel.add(luvaVaq, "cell 0 12");
+		JCheckBox luvaSegTemp = new JCheckBox("Luvas de segurança para alta temperatura (pedido de reposição do EPI somente mediante a devolução do EPI usado)");
+		panel.add(luvaSegTemp, "cell 0 13");
+		JCheckBox luvaSegCong = new JCheckBox("Luvas de segurança para peças ou produtos congelados");
+		panel.add(luvaSegCong, "cell 0 14");
+		JCheckBox mangaSeg = new JCheckBox("Manga de segurança");
+		panel.add(mangaSeg, "cell 0 15");
+		JCheckBox aventalTNT = new JCheckBox("Avental confeccionado em TNT");
+		panel.add(aventalTNT, "cell 0 16");
+		JCheckBox cartQuimGA = new JCheckBox("Cartucho Químico GA/VO, com baioneta");
+		panel.add(cartQuimGA, "cell 0 17");
+		JCheckBox cartQuimForm = new JCheckBox("Cartucho Químico Formaldeído, com baioneta");
+		panel.add(cartQuimForm, "cell 0 18");
+		JCheckBox respSemiManu = new JCheckBox("Respirador Semi facial com manutenção");
+		panel.add(respSemiManu, "cell 0 19");
+		JCheckBox respPuri = new JCheckBox("Respirador purificador de ar tipo peça facial inteira");
+		panel.add(respPuri, "cell 0 20");
+		JCheckBox mascTripla = new JCheckBox("Máscara cirúrgica de tripla camada");
+		panel.add(mascTripla, "cell 0 21");
+		JCheckBox respSemiPPF2 = new JCheckBox("Respirador semi-facial PPF2 (Máscara PFF2)");
+		panel.add(respSemiPPF2, "cell 0 22");
+		JCheckBox protAudTrad = new JCheckBox("Protetor Auditivo Tradicional, tipo Concha, dobrável");
+		panel.add(protAudTrad, "cell 0 23");
+		JCheckBox prodAuri = new JCheckBox("Protetor Auricular de Silicone tipo plug");
+		panel.add(prodAuri, "cell 0 24");
+		JCheckBox sapatDesc = new JCheckBox("Sapatilha descartável (Propé)");
+		panel.add(sapatDesc, "cell 0 25");
+		JCheckBox toucaDesc = new JCheckBox("Touca descartável branca");
+		panel.add(toucaDesc, "cell 0 26");
+		JCheckBox oculosSegPoli = new JCheckBox("Óculos de Segurança em policarbonato");
+		panel.add(oculosSegPoli, "cell 0 27");
+		JCheckBox oculosSegAmp = new JCheckBox("Óculos de Segurança ampla visão");
+		panel.add(oculosSegAmp, "cell 0 28");
+		JCheckBox escudoProt = new JCheckBox("Escudo de proteção facial");
+		panel.add(escudoProt, "cell 0 29");
 
 		Label labelDados_1 = new Label("Contato");
 		labelDados_1.setForeground(Color.WHITE);
