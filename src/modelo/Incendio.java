@@ -18,6 +18,21 @@ public class Incendio {
 		this.fone = fone;
 		this.obs = obs;
 	}
+	
+	public boolean verficaCampo() {
+		if(getIrreg().isEmpty()==true)
+			return true;
+		if(getSist().isEmpty()==true)
+			return true;
+		if(getLocal().isEmpty()==true)
+			return true;
+		if(getFone().isEmpty()==true)
+			return true;
+		return false;
+	}
+	
+	
+	
 
 	public Incendio() {
 

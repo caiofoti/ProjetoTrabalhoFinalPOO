@@ -19,13 +19,19 @@ public class Cortina {
 	}
 	
 	public boolean verficaCampo() {
-		getEmail().isEmpty();
-		getSub().isEmpty();
-		getJust().isEmpty();
-		getLocal().isEmpty();
-		getTel().isEmpty();
-		getResp().isEmpty();	
-		return true;
+		if(getEmail().isEmpty()==true)
+			return true;
+		if(getJust().isEmpty()==true)
+			return true;
+		if(getLocal().isEmpty()==true)
+			return true;
+		if(getTel().isEmpty()==true)
+			return true;
+		if(getResp().isEmpty()==true)
+			return true;
+		if(getSub().isEmpty()==true)
+			return true;
+		return false;
 	}
 
 	public Cortina() {
