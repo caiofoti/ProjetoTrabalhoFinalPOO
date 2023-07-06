@@ -31,11 +31,31 @@ public class TelaEPIS extends JPanel {
 	private JButton buttonCancelar;
 	private JTextArea areaJust;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	private JTextField textField;
+	private JTextField fieldMatricula;
 	private JCheckBox luvaSegBor;
 	private JCheckBox luvaSegPro;
 	private JCheckBox luvaVaq;
-
+	private JCheckBox luvaSegTemp;
+	private JCheckBox luvaSegCong;
+	private JCheckBox mangaSeg;
+	private JCheckBox aventalTNT;
+	private JCheckBox cartQuimGA;
+	private JCheckBox cartQuimForm;
+	private JCheckBox respSemiManu;
+	private JCheckBox respPuri;
+	private JCheckBox mascTripla;
+	private JCheckBox respSemiPPF2;
+	private JCheckBox protAudTrad;
+	private JCheckBox prodAuri;
+	private JCheckBox sapatDesc;
+	private JCheckBox toucaDesc;
+	private JCheckBox oculosSegPoli;
+	private JCheckBox oculosSegAmp;
+	private JCheckBox escudoProt;
+	private JComboBox comboFunc;
+	private JLabel labelTelf;
+	private JTextField fieldTelf;
+	private JTextArea textAreaObs;
 	/**
 	 * Create the panel.
 	 */
@@ -55,7 +75,7 @@ public class TelaEPIS extends JPanel {
 
 		JPanel panel = new JPanel();
 		scrollPane.setViewportView(panel);
-		panel.setLayout(new MigLayout("", "[grow]", "[][10px][][][][][10px][][10px][][10px][][][][][][][][][][][][][][][][][][][][][15px][][][][][][15px][][][][80px][15px][][][20px][]"));
+		panel.setLayout(new MigLayout("", "[grow]", "[][10px][][][][][10px][][10px][][10px][][][][][][][][][][][][][][][][][][][][][15px][][][][][][][][15px][][][][80px][15px][][][20px][]"));
 
 		JLabel labelFoto = new JLabel();
 		labelFoto.setIcon(new ImageIcon("ProjetoTrabalhoFinalPOO\\src\\TelaPedidos4.png"));
@@ -114,79 +134,84 @@ public class TelaEPIS extends JPanel {
 		panel.add(luvaSegPro, "cell 0 11");
 		 luvaVaq = new JCheckBox("Luvas de vaqueta - Raspas de couro (item em falta)");
 		panel.add(luvaVaq, "cell 0 12");
-		JCheckBox luvaSegTemp = new JCheckBox("Luvas de segurança para alta temperatura (pedido de reposição do EPI somente mediante a devolução do EPI usado)");
+		 luvaSegTemp = new JCheckBox("Luvas de segurança para alta temperatura (pedido de reposição do EPI somente mediante a devolução do EPI usado)");
 		panel.add(luvaSegTemp, "cell 0 13");
-		JCheckBox luvaSegCong = new JCheckBox("Luvas de segurança para peças ou produtos congelados");
+		 luvaSegCong = new JCheckBox("Luvas de segurança para peças ou produtos congelados");
 		panel.add(luvaSegCong, "cell 0 14");
-		JCheckBox mangaSeg = new JCheckBox("Manga de segurança");
+		 mangaSeg = new JCheckBox("Manga de segurança");
 		panel.add(mangaSeg, "cell 0 15");
-		JCheckBox aventalTNT = new JCheckBox("Avental confeccionado em TNT");
+		 aventalTNT = new JCheckBox("Avental confeccionado em TNT");
 		panel.add(aventalTNT, "cell 0 16");
-		JCheckBox cartQuimGA = new JCheckBox("Cartucho Químico GA/VO, com baioneta");
+		 cartQuimGA = new JCheckBox("Cartucho Químico GA/VO, com baioneta");
 		panel.add(cartQuimGA, "cell 0 17");
-		JCheckBox cartQuimForm = new JCheckBox("Cartucho Químico Formaldeído, com baioneta");
+		 cartQuimForm = new JCheckBox("Cartucho Químico Formaldeído, com baioneta");
 		panel.add(cartQuimForm, "cell 0 18");
-		JCheckBox respSemiManu = new JCheckBox("Respirador Semi facial com manutenção");
+		 respSemiManu = new JCheckBox("Respirador Semi facial com manutenção");
 		panel.add(respSemiManu, "cell 0 19");
-		JCheckBox respPuri = new JCheckBox("Respirador purificador de ar tipo peça facial inteira");
+		 respPuri = new JCheckBox("Respirador purificador de ar tipo peça facial inteira");
 		panel.add(respPuri, "cell 0 20");
-		JCheckBox mascTripla = new JCheckBox("Máscara cirúrgica de tripla camada");
+		 mascTripla = new JCheckBox("Máscara cirúrgica de tripla camada");
 		panel.add(mascTripla, "cell 0 21");
-		JCheckBox respSemiPPF2 = new JCheckBox("Respirador semi-facial PPF2 (Máscara PFF2)");
+		 respSemiPPF2 = new JCheckBox("Respirador semi-facial PPF2 (Máscara PFF2)");
 		panel.add(respSemiPPF2, "cell 0 22");
-		JCheckBox protAudTrad = new JCheckBox("Protetor Auditivo Tradicional, tipo Concha, dobrável");
+		 protAudTrad = new JCheckBox("Protetor Auditivo Tradicional, tipo Concha, dobrável");
 		panel.add(protAudTrad, "cell 0 23");
-		JCheckBox prodAuri = new JCheckBox("Protetor Auricular de Silicone tipo plug");
+		 prodAuri = new JCheckBox("Protetor Auricular de Silicone tipo plug");
 		panel.add(prodAuri, "cell 0 24");
-		JCheckBox sapatDesc = new JCheckBox("Sapatilha descartável (Propé)");
+		 sapatDesc = new JCheckBox("Sapatilha descartável (Propé)");
 		panel.add(sapatDesc, "cell 0 25");
-		JCheckBox toucaDesc = new JCheckBox("Touca descartável branca");
+		 toucaDesc = new JCheckBox("Touca descartável branca");
 		panel.add(toucaDesc, "cell 0 26");
-		JCheckBox oculosSegPoli = new JCheckBox("Óculos de Segurança em policarbonato");
+		 oculosSegPoli = new JCheckBox("Óculos de Segurança em policarbonato");
 		panel.add(oculosSegPoli, "cell 0 27");
-		JCheckBox oculosSegAmp = new JCheckBox("Óculos de Segurança ampla visão");
+		 oculosSegAmp = new JCheckBox("Óculos de Segurança ampla visão");
 		panel.add(oculosSegAmp, "cell 0 28");
-		JCheckBox escudoProt = new JCheckBox("Escudo de proteção facial");
+		 escudoProt = new JCheckBox("Escudo de proteção facial");
 		panel.add(escudoProt, "cell 0 29");
 
-		Label labelDados_1 = new Label("Contato");
-		labelDados_1.setForeground(Color.WHITE);
-		labelDados_1.setFont(new Font("Arial Black", Font.BOLD, 16));
-		labelDados_1.setBackground(new Color(51, 51, 102));
-		labelDados_1.setAlignment(Label.CENTER);
-		panel.add(labelDados_1, "cell 0 31,growx");
+		Label labelContato = new Label("Contato");
+		labelContato.setForeground(Color.WHITE);
+		labelContato.setFont(new Font("Arial Black", Font.BOLD, 16));
+		labelContato.setBackground(new Color(51, 51, 102));
+		labelContato.setAlignment(Label.CENTER);
+		panel.add(labelContato, "cell 0 31,growx");
 
-		JLabel Ramal_Telef_1 = new JLabel("Matricula do Requesitante");
-		Ramal_Telef_1.setFont(new Font("Arial", Font.BOLD, 14));
-		panel.add(Ramal_Telef_1, "flowx,cell 0 32");
+		JLabel labelMatricula = new JLabel("Matricula do Requesitante");
+		labelMatricula.setFont(new Font("Arial", Font.BOLD, 14));
+		panel.add(labelMatricula, "flowx,cell 0 32");
 
-		textField = new JTextField();
-		textField.setColumns(10);
-		panel.add(textField, "cell 0 33,growx");
+		fieldMatricula = new JTextField();
+		fieldMatricula.setColumns(10);
+		panel.add(fieldMatricula, "cell 0 33,growx");
+		
+		labelTelf = new JLabel("Telefone/Ramal");
+		labelTelf.setFont(new Font("Arial", Font.BOLD, 14));
+		panel.add(labelTelf, "cell 0 34");
+		
+		fieldTelf = new JTextField();
+		fieldTelf.setColumns(10);
+		panel.add(fieldTelf, "cell 0 35,growx");
 
 		JLabel Ramal_Telef_1_1 = new JLabel("Função");
 		Ramal_Telef_1_1.setFont(new Font("Arial", Font.BOLD, 14));
-		panel.add(Ramal_Telef_1_1, "flowx,cell 0 34");
+		panel.add(Ramal_Telef_1_1, "flowx,cell 0 36");
 
-		JComboBox comboBox = new JComboBox();
-		panel.add(comboBox, "cell 0 35,growx");
+		 comboFunc = new JComboBox();
+		panel.add(comboFunc, "cell 0 37,growx");
 
-		JLabel labelOutros = new JLabel("Outros");
-		labelOutros.setFont(new Font("Arial", Font.BOLD, 14));
-		panel.add(labelOutros, "flowx,cell 0 36");
+		JLabel labelObservações = new JLabel("Observações");
+		labelObservações.setFont(new Font("Arial", Font.BOLD, 14));
+		panel.add(labelObservações, "flowx,cell 0 38");
 
-		JCheckBox checkBoxOutros = new JCheckBox("Outros");
-		panel.add(checkBoxOutros, "cell 0 37");
-
-		JTextArea textAreaOutros = new JTextArea();
-		textAreaOutros.setLineWrap(true);
-		JScrollPane scrollPane_1 = new JScrollPane(textAreaOutros);
+		 textAreaObs = new JTextArea();
+		textAreaObs.setLineWrap(true);
+		JScrollPane scrollPane_1 = new JScrollPane(textAreaObs);
 		scrollPane_1.setPreferredSize(new Dimension(300, 100));
 		scrollPane_1.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel.add(scrollPane_1, "cell 0 38");
+		panel.add(scrollPane_1, "cell 0 40");
 
 		JPanel panel_1 = new JPanel();
-		panel.add(panel_1, "cell 0 39,grow");
+		panel.add(panel_1, "cell 0 41,grow");
 		panel_1.setLayout(new MigLayout("", "[grow][grow]", "[]"));
 
 		buttonEnviar = new JButton("Enviar");
@@ -198,9 +223,211 @@ public class TelaEPIS extends JPanel {
 	
 	// ########### GETTERS E SETTERS
 	
+	
+	
 
 	public JTextArea getAreaJust() {
 		return areaJust;
+	}
+
+	public JTextArea getTextAreaObs() {
+		return textAreaObs;
+	}
+
+	public void setTextAreaObs(JTextArea textAreaObs) {
+		this.textAreaObs = textAreaObs;
+	}
+
+	public JTextField getFieldMatricula() {
+		return fieldMatricula;
+	}
+
+	public void setFieldMatricula(JTextField fieldMatricula) {
+		this.fieldMatricula = fieldMatricula;
+	}
+
+	public JCheckBox getLuvaSegBor() {
+		return luvaSegBor;
+	}
+
+	public void setLuvaSegBor(JCheckBox luvaSegBor) {
+		this.luvaSegBor = luvaSegBor;
+	}
+
+	public JCheckBox getLuvaSegPro() {
+		return luvaSegPro;
+	}
+
+	public void setLuvaSegPro(JCheckBox luvaSegPro) {
+		this.luvaSegPro = luvaSegPro;
+	}
+
+	public JCheckBox getLuvaVaq() {
+		return luvaVaq;
+	}
+
+	public void setLuvaVaq(JCheckBox luvaVaq) {
+		this.luvaVaq = luvaVaq;
+	}
+
+	public JCheckBox getLuvaSegTemp() {
+		return luvaSegTemp;
+	}
+
+	public void setLuvaSegTemp(JCheckBox luvaSegTemp) {
+		this.luvaSegTemp = luvaSegTemp;
+	}
+
+	public JCheckBox getLuvaSegCong() {
+		return luvaSegCong;
+	}
+
+	public void setLuvaSegCong(JCheckBox luvaSegCong) {
+		this.luvaSegCong = luvaSegCong;
+	}
+
+	public JCheckBox getMangaSeg() {
+		return mangaSeg;
+	}
+
+	public void setMangaSeg(JCheckBox mangaSeg) {
+		this.mangaSeg = mangaSeg;
+	}
+
+	public JCheckBox getAventalTNT() {
+		return aventalTNT;
+	}
+
+	public void setAventalTNT(JCheckBox aventalTNT) {
+		this.aventalTNT = aventalTNT;
+	}
+
+	public JCheckBox getCartQuimGA() {
+		return cartQuimGA;
+	}
+
+	public void setCartQuimGA(JCheckBox cartQuimGA) {
+		this.cartQuimGA = cartQuimGA;
+	}
+
+	public JCheckBox getCartQuimForm() {
+		return cartQuimForm;
+	}
+
+	public void setCartQuimForm(JCheckBox cartQuimForm) {
+		this.cartQuimForm = cartQuimForm;
+	}
+
+	public JCheckBox getRespSemiManu() {
+		return respSemiManu;
+	}
+
+	public void setRespSemiManu(JCheckBox respSemiManu) {
+		this.respSemiManu = respSemiManu;
+	}
+
+	public JCheckBox getRespPuri() {
+		return respPuri;
+	}
+
+	public void setRespPuri(JCheckBox respPuri) {
+		this.respPuri = respPuri;
+	}
+
+	public JCheckBox getMascTripla() {
+		return mascTripla;
+	}
+
+	public void setMascTripla(JCheckBox mascTripla) {
+		this.mascTripla = mascTripla;
+	}
+
+	public JCheckBox getRespSemiPPF2() {
+		return respSemiPPF2;
+	}
+
+	public void setRespSemiPPF2(JCheckBox respSemiPPF2) {
+		this.respSemiPPF2 = respSemiPPF2;
+	}
+
+	public JCheckBox getProtAudTrad() {
+		return protAudTrad;
+	}
+
+	public void setProtAudTrad(JCheckBox protAudTrad) {
+		this.protAudTrad = protAudTrad;
+	}
+
+	public JCheckBox getProdAuri() {
+		return prodAuri;
+	}
+
+	public void setProdAuri(JCheckBox prodAuri) {
+		this.prodAuri = prodAuri;
+	}
+
+	public JCheckBox getSapatDesc() {
+		return sapatDesc;
+	}
+
+	public void setSapatDesc(JCheckBox sapatDesc) {
+		this.sapatDesc = sapatDesc;
+	}
+
+	public JCheckBox getToucaDesc() {
+		return toucaDesc;
+	}
+
+	public void setToucaDesc(JCheckBox toucaDesc) {
+		this.toucaDesc = toucaDesc;
+	}
+
+	public JCheckBox getOculosSegPoli() {
+		return oculosSegPoli;
+	}
+
+	public void setOculosSegPoli(JCheckBox oculosSegPoli) {
+		this.oculosSegPoli = oculosSegPoli;
+	}
+
+	public JCheckBox getOculosSegAmp() {
+		return oculosSegAmp;
+	}
+
+	public void setOculosSegAmp(JCheckBox oculosSegAmp) {
+		this.oculosSegAmp = oculosSegAmp;
+	}
+
+	public JCheckBox getEscudoProt() {
+		return escudoProt;
+	}
+
+	public void setEscudoProt(JCheckBox escudoProt) {
+		this.escudoProt = escudoProt;
+	}
+
+	public JComboBox getComboFunc() {
+		return comboFunc;
+	}
+
+	public void setComboFunc(JComboBox comboFunc) {
+		this.comboFunc = comboFunc;
+	}
+
+	public JLabel getLabelTelf() {
+		return labelTelf;
+	}
+
+	public void setLabelTelf(JLabel labelTelf) {
+		this.labelTelf = labelTelf;
+	}
+
+	public JTextField getFieldTelf() {
+		return fieldTelf;
+	}
+
+	public void setFieldTelf(JTextField fieldTelf) {
+		this.fieldTelf = fieldTelf;
 	}
 
 	public void setAreaJust(JTextArea areaJust) {

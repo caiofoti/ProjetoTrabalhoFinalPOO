@@ -2,6 +2,7 @@ package controle;
 
 import dao.LoginDAO;
 import modelo.Cortina;
+import modelo.EPIS;
 import modelo.Incendio;
 import modelo.Login;
 import modelo.Pedidos;
@@ -11,6 +12,7 @@ import visao.TelaIncendio;
 
 public class App {
 	public static void main(String[] args) {
+		EPIS ep = new EPIS();
 		Pedidos p = new Pedidos();
 		JanelaPrincipal jan = new JanelaPrincipal();
 		jan.setVisible(true);
@@ -24,6 +26,7 @@ public class App {
 		CortinaControle corcon = new CortinaControle(jan, co);
 		IncendioControle inccon = new IncendioControle(jan, inc);
 		PedidoControle pedcon = new PedidoControle(jan, p, inc);
+		EpisControle epcon = new EpisControle(jan, ep);
 	}
 
 }
