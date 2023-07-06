@@ -213,6 +213,8 @@ public class TelaCortina extends JPanel {
 			}});
 
 	}
+	
+	// ########### GETTERS E SETTERS
 
 	public JTextArea getAreaJust() {
 		return areaJust;

@@ -21,16 +21,17 @@ public class CortinaDAO {
 
 		con = SQLConnection.abrirConexaoMySQL();
 
-		sql = "INSERT INTO Cortinas VALUES(?,?,?,?,?,?)";
+		sql = "INSERT INTO Cortinas VALUES(?,?,?,?,?,?,?)";
 
 		try {
 			prep = con.prepareStatement(sql);
-			prep.setString(1, cor.getSub());
-			prep.setString(2, cor.getTel());
-			prep.setString(3, cor.getEmail());
-			prep.setString(4, cor.getLocal());
-			prep.setString(5, cor.getJust());
-			prep.setString(6, cor.getResp());
+			prep.setString(1, cor.geraID());
+			prep.setString(2, cor.getSub());
+			prep.setString(3, cor.getTel());
+			prep.setString(4, cor.getEmail());
+			prep.setString(5, cor.getLocal());
+			prep.setString(6, cor.getJust());
+			prep.setString(7, cor.getResp());
 
 			lin = prep.executeUpdate();
 

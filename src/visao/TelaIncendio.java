@@ -186,7 +186,9 @@ public class TelaIncendio extends JPanel {
 			}});
 
 			
-
+		// ########### GETTERS E SETTERS
+		
+		
 	}
 	
 	public JTextField getFieldLocal() {

@@ -40,7 +40,7 @@ public class TelaDeAutenticar extends JPanel {
 		panel.setLayout(new MigLayout("", "[297.00][239.00,grow][][-37.00,grow]", "[][][][30px][][20.00][13.00][22.00][16.00][26.00][][][][][][][][][][]"));
 		
 		imagemLogin = new JLabel("");
-		imagemLogin.setIcon(new ImageIcon(TelaDeAutenticar.class.getResource("/figuras/asdfasfdasfdasdfafdf.jpg")));
+		imagemLogin.setIcon(new ImageIcon(TelaDeAutenticar.class.getResource("/figuras/TelaLogin.jpg")));
 		panel.add(imagemLogin, "cell 0 1 1 18");
 		
 		imagemPedidosInternos = new JLabel("");
@@ -80,6 +80,10 @@ public class TelaDeAutenticar extends JPanel {
 
 	}
 
+	
+	// ########### GETTERS E SETTERS
+	
+	
 	public JTextField getFieldUsuario() {
 		return fieldUsuario;
 	}

@@ -34,17 +34,17 @@ public class CortinaControle implements ActionListener {
 		cor.setTel(jan.getTc().getFieldTel().getText());
 		cor.setResp(jan.getTc().getFieldResp().getText());
 
-		if (jan.getTc().getButtonGroup().getSelection() == null) {
-			cor.setSub("");
+		if (jan.getTc().getButtonGroup().getSelection() == null) { // Verifica se o buttonGroup retorna NULL
+			cor.setSub(""); // Se retorna NULL é setado como uma string vazia para utilizar método isEmpty() 
 		} else {
-			cor.setSub(jan.getTc().getButtonGroup().getSelection().getActionCommand());
+			cor.setSub(jan.getTc().getButtonGroup().getSelection().getActionCommand()); //Se retorna seleção seta a String da classe cortina
 		}
 
-		if (cor.verficaCampo()) {
+		if (cor.verficaCampo()) { // Se verificaCampo() retorna TRUE existem campos vazios!
 			JOptionPane.showMessageDialog(jan.getContentPane(), "Preencha todos  campos obrigatórios!");
 		} else if (cordao.cadastraCortina(cor)) {
 			System.out.println("Solicitação enviada!");
-			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!");
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada! ID do pedido: "+ cor.getID());
 		} else {
 			JOptionPane.showMessageDialog(jan.getContentPane(), "Falha ao enviar!");
 		}

@@ -31,6 +31,8 @@ public class JanelaPrincipal extends JFrame{
 	private TelaCortina tc = new TelaCortina();
 	private JMenuItem itemSair;
 	private CardLayout card;
+	private TelaEPIS te = new TelaEPIS();
+	private TelaPedidosInternos tp = new TelaPedidosInternos();
 
 	/**
 	 * Launch the application.
@@ -75,6 +77,9 @@ public class JanelaPrincipal extends JFrame{
 		content.add(ta, "tela1");
 		content.add(t2, "tela-inc");
 		content.add(tc, "tela-cort");
+		content.add(te, "tela-epis");
+		content.add(tp, "tela-pedidos");
+		
 		
 		menuPrincipal.add(itemAutenticar);
 		
@@ -86,7 +91,6 @@ public class JanelaPrincipal extends JFrame{
 		menuBar.add(menuASCOM);
 		
 		menuEngenharia = new JMenu("Engenharia");
-		menuEngenharia.setEnabled(false);
 		menuBar.add(menuEngenharia);
 		
 		JMenuItem itemCortinas = new JMenuItem("Solicitação de cortinas");
@@ -107,6 +111,22 @@ public class JanelaPrincipal extends JFrame{
 		
 	
 		menuEngenharia.add(itemIncendio);
+		
+		JMenuItem itemEPIS = new JMenuItem("EPI's");
+		itemEPIS.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				card.show(content, "tela-epis");
+			}
+		});
+		menuEngenharia.add(itemEPIS);
+		
+		JMenuItem itemPedidos = new JMenuItem("Pedidos Internos");
+		itemPedidos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				card.show(content, "tela-pedidos");
+			}
+		});
+		menuEngenharia.add(itemPedidos);
 		
 		JMenu menuProplan = new JMenu("PROPLAN");
 		menuProplan.setEnabled(false);
@@ -132,6 +152,10 @@ public class JanelaPrincipal extends JFrame{
 		
 		setContentPane(content);
 	}
+	
+	
+	// ########### GETTERS E SETTERS
+	
 
 	public TelaIncendio getT2() {
 		return t2;
@@ -171,6 +195,22 @@ public class JanelaPrincipal extends JFrame{
 
 	public void setItemSair(JMenuItem itemSair) {
 		this.itemSair = itemSair;
+	}
+
+	public TelaEPIS getTe() {
+		return te;
+	}
+
+	public void setTe(TelaEPIS te) {
+		this.te = te;
+	}
+
+	public TelaPedidosInternos getTp() {
+		return tp;
+	}
+
+	public void setTp(TelaPedidosInternos tp) {
+		this.tp = tp;
 	}
 	
 	

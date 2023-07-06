@@ -189,6 +189,9 @@ public class TelaEPIS extends JPanel {
 		buttonCancelar = new JButton("Cancelar");
 		panel_1.add(buttonCancelar, "cell 1 0,grow");
 	}
+	
+	// ########### GETTERS E SETTERS
+	
 
 	public JTextArea getAreaJust() {
 		return areaJust;

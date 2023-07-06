@@ -24,7 +24,7 @@ public class LoginDAO {
 		
 		con=SQLConnection.abrirConexaoMySQL();
 		
-		sql="Select * from login where usuario like ? and senha like ?";
+		sql="SELECT * FROM login WHERE usuario LIKE ? AND senha LIKE ?";
 		
 		try {
 			prep=con.prepareStatement(sql);

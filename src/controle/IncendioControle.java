@@ -36,7 +36,7 @@ public class IncendioControle implements ActionListener {
 		inc.setFone(jan.getT2().getFieldContato().getText());
 		inc.setObs(jan.getT2().getObsArea().getText());
 
-		if (inc.verficaCampo()) {
+		if (inc.verficaCampo()) { // Se verificaCampo() retorna TRUE existem campos vazios!
 			JOptionPane.showMessageDialog(jan.getContentPane(), "Preencha todos os campos obrigatórios!");
 		} else {
 			if (incdao.cadastraIncendio(inc)) {

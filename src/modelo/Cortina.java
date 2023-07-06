@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.Random;
+
 public class Cortina {
 	private String sub;
 	private String tel;
@@ -7,6 +9,7 @@ public class Cortina {
 	private String local;
 	private String just;
 	private String resp;
+	private String ID;
 
 	public Cortina(String sub, String tel, String email, String local, String just, String resp) {
 		super();
@@ -17,19 +20,26 @@ public class Cortina {
 		this.just = just;
 		this.resp = resp;
 	}
-	
+
+	public String geraID() {
+		Random random = new Random();
+		int numeroAleatorio = random.nextInt(999999) + 1;
+		ID = String.valueOf(numeroAleatorio);
+		return String.valueOf(numeroAleatorio);
+	}
+
 	public boolean verficaCampo() {
-		if(getEmail().isEmpty()==true)
+		if (getEmail().isEmpty() == true)
 			return true;
-		if(getJust().isEmpty()==true)
+		if (getJust().isEmpty() == true)
 			return true;
-		if(getLocal().isEmpty()==true)
+		if (getLocal().isEmpty() == true)
 			return true;
-		if(getTel().isEmpty()==true)
+		if (getTel().isEmpty() == true)
 			return true;
-		if(getResp().isEmpty()==true)
+		if (getResp().isEmpty() == true)
 			return true;
-		if(getSub().isEmpty()==true)
+		if (getSub().isEmpty() == true)
 			return true;
 		return false;
 	}
@@ -84,6 +94,14 @@ public class Cortina {
 
 	public void setResp(String resp) {
 		this.resp = resp;
+	}
+
+	public String getID() {
+		return ID;
+	}
+
+	public void setID(String iD) {
+		ID = iD;
 	}
 
 }
