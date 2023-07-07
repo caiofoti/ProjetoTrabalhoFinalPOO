@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.Action;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import dao.CortinaDAO;
@@ -18,6 +20,8 @@ public class EpisControle implements ActionListener {
 	private JanelaPrincipal jan;
 	private EpisDAO epdao;
 	private Login l;
+	private Icon certo = new ImageIcon(getClass().getResource("/figuras/comentar-alt-check.png"));
+	private Icon falha = new ImageIcon(getClass().getResource("/figuras/exclamacao.png"));
 
 	public EpisControle(JanelaPrincipal j, EPIS e, Login log) {
 		jan = j;
@@ -82,9 +86,9 @@ public class EpisControle implements ActionListener {
 		ep.setFunc(jan.getTe().getComboFunc().getSelectedItem().toString());
 		ep.setObs(jan.getTe().getTextAreaObs().getText());
 		if(epdao.cadastraEPI(ep)){
-			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!\nID do pedido: "+ ep.getID());
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!\nID do pedido: "+ ep.getID(), "Enviar pedido", JOptionPane.INFORMATION_MESSAGE, certo);
 		}else{
-			JOptionPane.showMessageDialog(jan.getContentPane(), "Erro ao enviar solicitação");
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Falha ao enviar!", "Enviar pedido", JOptionPane.ERROR_MESSAGE, falha);
 		};
 	}
 	

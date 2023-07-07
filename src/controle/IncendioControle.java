@@ -3,6 +3,8 @@ package controle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import dao.CortinaDAO;
@@ -18,6 +20,8 @@ public class IncendioControle implements ActionListener {
 	private JanelaPrincipal jan;
 	private IncendioDAO incdao;
 	private Login l;
+	private Icon certo = new ImageIcon(getClass().getResource("/figuras/comentar-alt-check.png"));
+	private Icon falha = new ImageIcon(getClass().getResource("/figuras/exclamacao.png"));
 
 	public IncendioControle(JanelaPrincipal j, Incendio incendio, Login login) {
 		jan = j;
@@ -41,13 +45,13 @@ public class IncendioControle implements ActionListener {
 		inc.setObs(jan.getT2().getObsArea().getText());
 
 		if (inc.verficaCampo()) { // Se verificaCampo() retorna TRUE existem campos vazios!
-			JOptionPane.showMessageDialog(jan.getContentPane(), "Preencha todos os campos obrigatórios!");
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Preencha todos  campos obrigatórios!", "Enviar pedido", JOptionPane.ERROR_MESSAGE, falha);
 		} else {
 			if (incdao.cadastraIncendio(inc)) {
 				System.out.println("Solicitação enviada!");
-				JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!\nID do pedido: "+inc.getID());
+				JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!\nID do pedido: "+ inc.getID(), "Enviar pedido", JOptionPane.INFORMATION_MESSAGE, certo);
 			} else {
-				JOptionPane.showMessageDialog(jan.getContentPane(), "Falha ao enviar!");
+				JOptionPane.showMessageDialog(jan.getContentPane(), "Falha ao enviar!", "Enviar pedido", JOptionPane.ERROR_MESSAGE, falha);
 			}
 		}
 	}

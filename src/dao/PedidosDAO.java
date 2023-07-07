@@ -28,12 +28,13 @@ public class PedidosDAO {
 		String sql;
 		SQLConnection.abrirConexaoMySQL();
 		con = SQLConnection.getConnection();
-		sql = "SELECT * FROM cortinas WHERE id LIKE ?";
+		sql = "SELECT * FROM cortinas WHERE id LIKE ? AND usuario LIKE ?";
 
 		try {
 			coluna2 = null;
 			prepS = con.prepareStatement(sql);
 			prepS.setString(1, p.getID());
+			prepS.setString(2, p.getUsuario());
 			res = prepS.executeQuery();
 
 			while (res.next()) {
@@ -46,10 +47,9 @@ public class PedidosDAO {
 				coluna7 = res.getString(7);
 				coluna8 = res.getString(8);
 			}
-			
-			if (coluna2 == null) 
+
+			if (coluna2 == null)
 				return false;
-			
 
 			consulta = "ID Usuário: " + coluna1 + "\nSubstituicao: " + coluna3 + "\nTelefone/Contato: " + coluna4
 					+ "\nE-Mail: " + coluna5 + "\nPredio/Sala: " + coluna6 + "\nJustificativa: " + coluna7
@@ -75,12 +75,13 @@ public class PedidosDAO {
 		SQLConnection.abrirConexaoMySQL();
 		con = SQLConnection.getConnection();
 
-		sql = "SELECT * FROM incendio WHERE id LIKE ?";
+		sql = "SELECT * FROM incendio WHERE id LIKE ? and usuario LIKE ?";
 
 		try {
 			coluna2 = null;
 			prepS = con.prepareStatement(sql);
 			prepS.setString(1, p.getID());
+			prepS.setString(2, p.getUsuario());
 			res = prepS.executeQuery();
 
 			while (res.next()) {
@@ -92,9 +93,8 @@ public class PedidosDAO {
 				coluna6 = res.getString(6);
 				coluna7 = res.getString(7);
 			}
-			
-			
-			if (coluna2 == null) 
+
+			if (coluna2 == null)
 				return false;
 
 			consulta = "ID Usuário: " + coluna1 + "\nIrregularidade: " + coluna3 + "\nSistema: " + coluna4
@@ -190,15 +190,15 @@ public class PedidosDAO {
 		SQLConnection.abrirConexaoMySQL();
 		con = SQLConnection.getConnection();
 
-		sql = "Select * from epis where id like ?";
+		sql = "SELECT * FROM epis WHERE id LIKE ? AND usuario LIKE ?";
 
 		try {
 			prepS = con.prepareStatement(sql);
 			prepS.setString(1, p.getID());
+			prepS.setString(2, p.getUsuario());
 			res = prepS.executeQuery();
 			coluna2 = null;
-			
-			
+
 			while (res.next()) {
 				coluna1 = res.getString(1);
 				coluna2 = res.getString(2);
@@ -227,10 +227,10 @@ public class PedidosDAO {
 				coluna25 = res.getString(25);
 				coluna26 = res.getString(26);
 			}
-			
-			if (coluna2 == null) 
+
+			if(coluna2 == null) {
 				return false;
-			
+			}
 
 			consulta = "ID Usuário: " + coluna1 + "\n" + coluna3 + "\n" + coluna4 + "\n" + coluna5 + "\n" + coluna6
 					+ "\n" + coluna7 + "\n" + coluna8 + "\n" + coluna9 + "\n" + coluna10 + "\n" + coluna11 + "\n"
@@ -281,6 +281,8 @@ public class PedidosDAO {
 		}
 
 	}
+
+	
 
 	// ##### CRIA GETTERS E SETTERS
 

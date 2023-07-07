@@ -12,8 +12,15 @@ VALUES(
 "123456"
 );
 
+INSERT INTO login(usuario, senha)
+VALUES(
+"luciano",
+"123456"
+);
+
+
 CREATE TABLE cortinas(
-	usuario varchar(100),
+	usuario varchar(100) ,
 	id varchar(6) not null,
 	substituicao varchar(3),
     telf varchar(100),
@@ -65,6 +72,5 @@ CREATE TABLE epis(
     primary key(id)
 );
 
-select * from incendio;
 
 

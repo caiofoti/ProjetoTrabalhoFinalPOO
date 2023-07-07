@@ -3,6 +3,8 @@ package controle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import dao.CortinaDAO;
@@ -16,6 +18,8 @@ public class CortinaControle implements ActionListener {
 	private JanelaPrincipal jan;
 	private CortinaDAO cordao;
 	private Login login;
+	private Icon certo = new ImageIcon(getClass().getResource("/figuras/comentar-alt-check.png"));
+	private Icon falha = new ImageIcon(getClass().getResource("/figuras/exclamacao.png"));
 
 	public CortinaControle(JanelaPrincipal j, Cortina cortina, Login l) {
 		jan = j;
@@ -46,12 +50,12 @@ public class CortinaControle implements ActionListener {
 		}
 
 		if (cor.verficaCampo()) { // Se verificaCampo() retorna TRUE existem campos vazios!
-			JOptionPane.showMessageDialog(jan.getContentPane(), "Preencha todos  campos obrigatórios!");
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Preencha todos  campos obrigatórios!", "Enviar pedido", JOptionPane.ERROR_MESSAGE, falha);
 		} else if (cordao.cadastraCortina(cor)) {
 			System.out.println("Solicitação enviada!");
-			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!\nID do pedido: "+ cor.getID());
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!\nID do pedido: "+ cor.getID(), "Enviar pedido", JOptionPane.INFORMATION_MESSAGE, certo);
 		} else {
-			JOptionPane.showMessageDialog(jan.getContentPane(), "Falha ao enviar!");
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Falha ao enviar!", "Enviar pedido", JOptionPane.ERROR_MESSAGE, falha);
 		}
 
 	}

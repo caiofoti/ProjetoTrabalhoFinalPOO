@@ -52,10 +52,12 @@ public class TelaPedidosInternos extends JPanel {
 		add(labelConsulta, "cell 0 4 2 1");
 		
 		buttonConsultar = new JButton("Consultar");
-		add(buttonConsultar, "flowx,cell 3 3,alignx left,aligny center");
+		add(buttonConsultar, "flowx,cell 3 3,growx,aligny center");
 		
 		buttonRemover = new JButton("Remover");
-		add(buttonRemover, "cell 3 3,alignx right");
+		add(buttonRemover, "cell 3 3,growx");
+		
+		
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -67,12 +69,12 @@ public class TelaPedidosInternos extends JPanel {
 		scrollPane.setViewportView(areaConsulta);
 		
 		comboTipo = new JComboBox();
-		add(comboTipo, "cell 0 2 2 1,growx");
+		add(comboTipo, "cell 0 2,growx");
 		comboTipo.addItem(" 		");
 		comboTipo.addItem("Pedidos cortinas");
 		comboTipo.addItem("Pedidos incêndio");
 		comboTipo.addItem("Pedidos EPIS");
-
+		
 	}
 
 	// ########### GETTERS E SETTERS
@@ -116,6 +118,8 @@ public class TelaPedidosInternos extends JPanel {
 	public void setComboTipo(JComboBox<String> comboTipo) {
 		this.comboTipo = comboTipo;
 	}
+
+	
 	
 	
 	
