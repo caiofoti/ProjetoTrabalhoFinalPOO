@@ -45,7 +45,7 @@ public class IncendioControle implements ActionListener {
 		} else {
 			if (incdao.cadastraIncendio(inc)) {
 				System.out.println("Solicitação enviada!");
-				JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!");
+				JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!\nID do pedido: "+inc.getID());
 			} else {
 				JOptionPane.showMessageDialog(jan.getContentPane(), "Falha ao enviar!");
 			}

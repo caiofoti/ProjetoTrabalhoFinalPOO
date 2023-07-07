@@ -10,16 +10,19 @@ import dao.CortinaDAO;
 import dao.EpisDAO;
 import modelo.Cortina;
 import modelo.EPIS;
+import modelo.Login;
 import visao.JanelaPrincipal;
 
 public class EpisControle implements ActionListener {
 	private EPIS ep;
 	private JanelaPrincipal jan;
 	private EpisDAO epdao;
+	private Login l;
 
-	public EpisControle(JanelaPrincipal j, EPIS e) {
+	public EpisControle(JanelaPrincipal j, EPIS e, Login log) {
 		jan = j;
 		ep = e;
+		l = log;
 		epdao = new EpisDAO();
 		registraListeners();
 	}
@@ -27,9 +30,6 @@ public class EpisControle implements ActionListener {
 	public void registraListeners() {
 		jan.getTe().getButtonEnviar().addActionListener(this);
 		jan.getTe().getButtonCancelar().addActionListener(this);
-		
-		
-		
 		jan.getTe().getLuvaSegBor().addActionListener(this);
 		jan.getTe().getLuvaSegPro().addActionListener(this);
 		jan.getTe().getLuvaVaq().addActionListener(this);
@@ -56,7 +56,7 @@ public class EpisControle implements ActionListener {
 	}
 	
 	public void enviarEPIS() {
-		
+		ep.setUsuario(l.getUsuario());
 		ep.setLuva1(jan.getTe().getLuvaSegBor().getText());
 		ep.setLuva2(jan.getTe().getLuvaSegPro().getText());
 		ep.setLuva3(jan.getTe().getLuvaVaq().getText());
@@ -82,13 +82,39 @@ public class EpisControle implements ActionListener {
 		ep.setFunc(jan.getTe().getComboFunc().getSelectedItem().toString());
 		ep.setObs(jan.getTe().getTextAreaObs().getText());
 		if(epdao.cadastraEPI(ep)){
-			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada! ID do pedido: "+ ep.getID());
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!\nID do pedido: "+ ep.getID());
 		}else{
 			JOptionPane.showMessageDialog(jan.getContentPane(), "Erro ao enviar solicitação");
 		};
 	}
 	
-	
+	public void limpaTela() {
+		
+		jan.getTe().getLuvaSegBor().setSelected(false);
+		jan.getTe().getLuvaSegPro().setSelected(false);
+		jan.getTe().getLuvaVaq().setSelected(false);
+		jan.getTe().getLuvaSegTemp().setSelected(false);
+		jan.getTe().getLuvaSegCong().setSelected(false);
+		jan.getTe().getMangaSeg().setSelected(false);
+		jan.getTe().getAventalTNT().setSelected(false);
+		jan.getTe().getCartQuimGA().setSelected(false);
+		jan.getTe().getCartQuimForm().setSelected(false);
+		jan.getTe().getRespSemiManu().setSelected(false);
+		jan.getTe().getRespPuri().setSelected(false);
+		jan.getTe().getMascTripla().setSelected(false);
+		jan.getTe().getRespSemiPPF2().setSelected(false);
+		jan.getTe().getProtAudTrad().setSelected(false);
+		jan.getTe().getProdAuri().setSelected(false);
+		jan.getTe().getSapatDesc().setSelected(false);
+		jan.getTe().getToucaDesc().setSelected(false);
+		jan.getTe().getOculosSegPoli().setSelected(false);
+		jan.getTe().getOculosSegAmp().setSelected(false);
+		jan.getTe().getEscudoProt().setSelected(false);
+		jan.getTe().getFieldMatricula().setText("");
+		jan.getTe().getFieldTelf().setText("");
+		jan.getTe().getComboFunc().setSelectedIndex(0);
+		jan.getTe().getTextAreaObs().setText(null);
+	}
 	
 
 	@Override
@@ -96,6 +122,8 @@ public class EpisControle implements ActionListener {
 		// TODO Auto-generated method stub
 		if(e.getActionCommand().equals("Enviar")) {
 			enviarEPIS();
+		}else if (e.getActionCommand().equals("Cancelar")) {
+			limpaTela();
 		}
 	}
 }

@@ -30,12 +30,12 @@ public class TelaDeAutenticar extends JPanel {
 	 * Create the panel.
 	 */
 	public TelaDeAutenticar() {
-		setBackground(new Color(255, 255, 255));
+		setBackground(new Color(53, 74, 149));
 		setBounds(100, 100, 665, 658);
 		setLayout(new MigLayout("", "[3.00][374.00][333.00]", "[]"));
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(SystemColor.activeCaption);
+		panel.setBackground(new Color(53, 74, 149));
 		add(panel, "cell 1 0 2 1,grow");
 		panel.setLayout(new MigLayout("", "[297.00][239.00,grow][][-37.00,grow]", "[][][][30px][][20.00][13.00][22.00][16.00][26.00][][][][][][][][][][]"));
 		
@@ -48,6 +48,7 @@ public class TelaDeAutenticar extends JPanel {
 		panel.add(imagemPedidosInternos, "cell 1 2,alignx center");
 		
 		JLabel labelUsuario = new JLabel("Usuário");
+		labelUsuario.setForeground(new Color(255, 255, 255));
 		labelUsuario.setFont(new Font("Arial", Font.BOLD, 11));
 		panel.add(labelUsuario, "cell 1 4,alignx center,aligny center");
 		
@@ -56,6 +57,7 @@ public class TelaDeAutenticar extends JPanel {
 		fieldUsuario.setColumns(10);
 		
 		JLabel labelSenha = new JLabel("Senha");
+		labelSenha.setForeground(new Color(255, 255, 255));
 		labelSenha.setFont(new Font("Arial", Font.BOLD, 11));
 		panel.add(labelSenha, "cell 1 6,alignx center");
 		

@@ -5,35 +5,33 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
-
-import modelo.Cortina;
-import modelo.Incendio;
+import modelo.Login;
 import modelo.Pedidos;
 
 public class PedidosDAO {
-	private String coluna1 = null, coluna2 = null, coluna3 = null, coluna4 = null, coluna5 = null, coluna6 = null, coluna7 = null, coluna8 = null, coluna9 = null, coluna10 = null,
-            coluna11 = null, coluna12 = null, coluna13 = null, coluna14 = null, coluna15 = null, coluna16 = null, coluna17 = null, coluna18 = null, coluna19 = null, coluna20 = null,
-            coluna21 = null, coluna22 = null, coluna23 = null, coluna24 = null, coluna25 = null;
+	private String coluna1 = null, coluna2 = null, coluna3 = null, coluna4 = null, coluna5 = null, coluna6 = null,
+			coluna7 = null, coluna8 = null, coluna9 = null, coluna10 = null, coluna11 = null, coluna12 = null,
+			coluna13 = null, coluna14 = null, coluna15 = null, coluna16 = null, coluna17 = null, coluna18 = null,
+			coluna19 = null, coluna20 = null, coluna21 = null, coluna22 = null, coluna23 = null, coluna24 = null,
+			coluna25 = null, coluna26 = null;
 
 	private Connection con;
 	private String consulta;
+	private Login l;
 
 	public PedidosDAO() {
 	}
 
 	public boolean consultaCortina(Pedidos p) {
 		PreparedStatement prepS = null;
-
 		ResultSet res;
 		String sql;
-
 		SQLConnection.abrirConexaoMySQL();
 		con = SQLConnection.getConnection();
-
-		sql = "Select * from cortinas where id like ?";
+		sql = "SELECT * FROM cortinas WHERE id LIKE ?";
 
 		try {
+			coluna2 = null;
 			prepS = con.prepareStatement(sql);
 			prepS.setString(1, p.getID());
 			res = prepS.executeQuery();
@@ -46,11 +44,16 @@ public class PedidosDAO {
 				coluna5 = res.getString(5);
 				coluna6 = res.getString(6);
 				coluna7 = res.getString(7);
+				coluna8 = res.getString(8);
 			}
+			
+			if (coluna2 == null) 
+				return false;
+			
 
-			consulta = "ID: " + coluna1 + "\nSubstituicao: " + coluna2 + "\nTelefone/Contato: " + coluna3 + "\nE-Mail: "
-					+ coluna4 + "\nPredio/Sala: " + coluna5 + "\nJustificativa: " + coluna6 + "\nResponsavel: "
-					+ coluna7;
+			consulta = "ID Usuário: " + coluna1 + "\nSubstituicao: " + coluna3 + "\nTelefone/Contato: " + coluna4
+					+ "\nE-Mail: " + coluna5 + "\nPredio/Sala: " + coluna6 + "\nJustificativa: " + coluna7
+					+ "\nResponsavel: " + coluna8;
 
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
@@ -72,9 +75,10 @@ public class PedidosDAO {
 		SQLConnection.abrirConexaoMySQL();
 		con = SQLConnection.getConnection();
 
-		sql = "Select * from incendio where id like ?";
+		sql = "SELECT * FROM incendio WHERE id LIKE ?";
 
 		try {
+			coluna2 = null;
 			prepS = con.prepareStatement(sql);
 			prepS.setString(1, p.getID());
 			res = prepS.executeQuery();
@@ -86,10 +90,15 @@ public class PedidosDAO {
 				coluna4 = res.getString(4);
 				coluna5 = res.getString(5);
 				coluna6 = res.getString(6);
+				coluna7 = res.getString(7);
 			}
+			
+			
+			if (coluna2 == null) 
+				return false;
 
-			consulta = "ID: " + coluna1 + "\nIrregularidade: " + coluna2 + "\nSistema: " + coluna3 + "\nSala/Prédio: "
-					+ coluna4 + "\nTelefone: " + coluna5 + "\nObservação: " + coluna6;
+			consulta = "ID Usuário: " + coluna1 + "\nIrregularidade: " + coluna3 + "\nSistema: " + coluna4
+					+ "\nSala/Prédio: " + coluna5 + "\nTelefone: " + coluna6 + "\nObservação: " + coluna7;
 
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
@@ -110,11 +119,12 @@ public class PedidosDAO {
 			SQLConnection.abrirConexaoMySQL();
 			con = SQLConnection.getConnection();
 
-			sql = "DELETE FROM Cortinas WHERE id LIKE ?";
+			sql = "DELETE FROM Cortinas WHERE id LIKE ? AND usuario LIKE ?";
 
 			try {
 				prepS = con.prepareStatement(sql);
 				prepS.setString(1, p.getID());
+				prepS.setString(2, p.getUsuario());
 				res = prepS.executeUpdate();
 
 				if (res == 1) {
@@ -135,7 +145,7 @@ public class PedidosDAO {
 
 		}
 	}
-	
+
 	public boolean removeIncendio(Pedidos p) {
 		{
 			PreparedStatement prepS = null;
@@ -144,11 +154,12 @@ public class PedidosDAO {
 			SQLConnection.abrirConexaoMySQL();
 			con = SQLConnection.getConnection();
 
-			sql = "DELETE FROM Incendio WHERE id LIKE ?";
+			sql = "DELETE FROM Incendio WHERE id LIKE ? AND usuario LIKE ?";
 
 			try {
 				prepS = con.prepareStatement(sql);
 				prepS.setString(1, p.getID());
+				prepS.setString(2, p.getUsuario());
 				res = prepS.executeUpdate();
 
 				if (res == 1) {
@@ -169,7 +180,7 @@ public class PedidosDAO {
 
 		}
 	}
-	
+
 	public boolean consultaEpi(Pedidos p) {
 		PreparedStatement prepS = null;
 
@@ -185,7 +196,9 @@ public class PedidosDAO {
 			prepS = con.prepareStatement(sql);
 			prepS.setString(1, p.getID());
 			res = prepS.executeQuery();
-
+			coluna2 = null;
+			
+			
 			while (res.next()) {
 				coluna1 = res.getString(1);
 				coluna2 = res.getString(2);
@@ -212,11 +225,18 @@ public class PedidosDAO {
 				coluna23 = res.getString(23);
 				coluna24 = res.getString(24);
 				coluna25 = res.getString(25);
-
+				coluna26 = res.getString(26);
 			}
+			
+			if (coluna2 == null) 
+				return false;
+			
 
-			consulta = "ID: "+coluna1+"\n"+coluna2+"\n"+coluna3+"\n"+coluna4+"\n"+coluna5+"\n"+coluna6+"\n"+coluna7+"\n"+coluna8+"\n"+coluna9+"\n"+coluna10+"\n"+coluna11+"\n"+coluna12+"\n"+coluna13+"\n"+coluna14+"\n"+coluna15+"\n"+coluna16+"\n"+coluna17+"\n"
-					+coluna18+"\n"+coluna19+"\n"+coluna20+"\n"+coluna21+"\n"+coluna22+"\n"+coluna23+"\n"+coluna24+"\n"+coluna25;
+			consulta = "ID Usuário: " + coluna1 + "\n" + coluna3 + "\n" + coluna4 + "\n" + coluna5 + "\n" + coluna6
+					+ "\n" + coluna7 + "\n" + coluna8 + "\n" + coluna9 + "\n" + coluna10 + "\n" + coluna11 + "\n"
+					+ coluna12 + "\n" + coluna13 + "\n" + coluna14 + "\n" + coluna15 + "\n" + coluna16 + "\n" + coluna17
+					+ "\n" + coluna18 + "\n" + coluna19 + "\n" + coluna20 + "\n" + coluna21 + "\n" + coluna22 + "\n"
+					+ coluna23 + "\n" + coluna24 + "\n" + coluna25;
 
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
@@ -228,20 +248,20 @@ public class PedidosDAO {
 		SQLConnection.fecharConexao();
 		return true;
 	}
-	
-	
-	public boolean removeEPIS(Pedidos p){
+
+	public boolean removeEPIS(Pedidos p) {
 		PreparedStatement prepS = null;
 		String sql;
 		int res;
 		SQLConnection.abrirConexaoMySQL();
 		con = SQLConnection.getConnection();
 
-		sql = "DELETE FROM epis WHERE id LIKE ?";
+		sql = "DELETE FROM epis WHERE id LIKE ? AND usuario LIKE ?";
 
 		try {
 			prepS = con.prepareStatement(sql);
 			prepS.setString(1, p.getID());
+			prepS.setString(2, p.getUsuario());
 			res = prepS.executeUpdate();
 
 			if (res == 1) {
@@ -261,12 +281,8 @@ public class PedidosDAO {
 		}
 
 	}
-	
-	
-	
 
-	
-	// ##### CRIA GETTERS E SETTERS 
+	// ##### CRIA GETTERS E SETTERS
 
 	public String getColuna1() {
 		return coluna1;
@@ -331,7 +347,7 @@ public class PedidosDAO {
 	public void setColuna8(String coluna8) {
 		this.coluna8 = coluna8;
 	}
-	
+
 	public String getColuna9() {
 		return coluna9;
 	}

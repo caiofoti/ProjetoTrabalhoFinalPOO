@@ -41,8 +41,6 @@ public class Incendio {
 		return false;
 	}
 	
-	
-	
 
 	public Incendio() {
 

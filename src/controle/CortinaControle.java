@@ -49,12 +49,17 @@ public class CortinaControle implements ActionListener {
 			JOptionPane.showMessageDialog(jan.getContentPane(), "Preencha todos  campos obrigatórios!");
 		} else if (cordao.cadastraCortina(cor)) {
 			System.out.println("Solicitação enviada!");
-			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada! ID do pedido: "+ cor.getID());
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada!\nID do pedido: "+ cor.getID());
 		} else {
 			JOptionPane.showMessageDialog(jan.getContentPane(), "Falha ao enviar!");
 		}
 
 	}
+	
+	
+	
+	
+	
 
 	public void limpaTela() {
 		jan.getTc().getFieldEmail().setText(null);
@@ -70,6 +75,8 @@ public class CortinaControle implements ActionListener {
 		// TODO Auto-generated method stub
 		if (e.getActionCommand().equals("Enviar")) {
 			enviarCortina();
+		}else if (e.getActionCommand().equals("Cancelar")) {
+			limpaTela();
 		}
 	}
 

@@ -18,6 +18,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
+import java.awt.SystemColor;
+import java.awt.Color;
 
 public class JanelaPrincipal extends JFrame {
 
@@ -60,10 +62,12 @@ public class JanelaPrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 665, 658);
 		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(new Color(53, 74, 149));
 		menuBar.setToolTipText("ASCOM");
 		setJMenuBar(menuBar);
 
 		JMenu menuPrincipal = new JMenu("Principal");
+		menuPrincipal.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/home.png")));
 		menuBar.add(menuPrincipal);
 
 		JMenuItem itemAutenticar = new JMenuItem("Autenticar");
@@ -108,10 +112,12 @@ public class JanelaPrincipal extends JFrame {
 		menuPrincipal.add(itemSair);
 
 		JMenu menuASCOM = new JMenu("ASCOM");
+		menuASCOM.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/ascom.png")));
 		menuASCOM.setEnabled(false);
 		menuBar.add(menuASCOM);
 
 		menuEngenharia = new JMenu("Engenharia");
+		menuEngenharia.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/engenharia.png")));
 		menuEngenharia.setEnabled(false);
 		menuBar.add(menuEngenharia);
 
@@ -159,10 +165,12 @@ public class JanelaPrincipal extends JFrame {
 		menuEngenharia.add(itemPedidos);
 
 		JMenu menuProplan = new JMenu("PROPLAN");
+		menuProplan.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/proplan.png")));
 		menuProplan.setEnabled(false);
 		menuBar.add(menuProplan);
 
 		JMenu menuSEI = new JMenu("SEI");
+		menuSEI.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/sei.png")));
 		menuSEI.setEnabled(false);
 		menuBar.add(menuSEI);
 

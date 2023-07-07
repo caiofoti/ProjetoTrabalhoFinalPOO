@@ -25,8 +25,8 @@ public class App {
 		LoginControle logcon = new LoginControle(jan, li);
 		CortinaControle corcon = new CortinaControle(jan, co, li);
 		IncendioControle inccon = new IncendioControle(jan, inc, li);
-		PedidoControle pedcon = new PedidoControle(jan, p, inc);
-		EpisControle epcon = new EpisControle(jan, ep);
+		PedidoControle pedcon = new PedidoControle(jan, p, inc, li);
+		EpisControle epcon = new EpisControle(jan, ep, li);
 	}
 
 }
