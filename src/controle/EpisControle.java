@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.Action;
+import javax.swing.JOptionPane;
 
 import dao.CortinaDAO;
 import dao.EpisDAO;
@@ -26,6 +27,9 @@ public class EpisControle implements ActionListener {
 	public void registraListeners() {
 		jan.getTe().getButtonEnviar().addActionListener(this);
 		jan.getTe().getButtonCancelar().addActionListener(this);
+		
+		
+		
 		jan.getTe().getLuvaSegBor().addActionListener(this);
 		jan.getTe().getLuvaSegPro().addActionListener(this);
 		jan.getTe().getLuvaVaq().addActionListener(this);
@@ -52,9 +56,36 @@ public class EpisControle implements ActionListener {
 	}
 	
 	public void enviarEPIS() {
+		
 		ep.setLuva1(jan.getTe().getLuvaSegBor().getText());
-		ep.setLuva2(jan.getTe().getLuvaSegCong().getText());
-		epdao.cadastraEPI(ep);
+		ep.setLuva2(jan.getTe().getLuvaSegPro().getText());
+		ep.setLuva3(jan.getTe().getLuvaVaq().getText());
+		ep.setLuva4(jan.getTe().getLuvaSegTemp().getText());
+		ep.setLuva5(jan.getTe().getLuvaSegCong().getText());
+		ep.setManga(jan.getTe().getMangaSeg().getText());
+		ep.setAvental(jan.getTe().getAventalTNT().getText());
+		ep.setCartucho1(jan.getTe().getCartQuimGA().getText());
+		ep.setCartucho2(jan.getTe().getCartQuimForm().getText());
+		ep.setResp1(jan.getTe().getRespSemiManu().getText());
+		ep.setResp2(jan.getTe().getRespPuri().getText());
+		ep.setMascara(jan.getTe().getMascTripla().getText());
+		ep.setResp3(jan.getTe().getRespSemiPPF2().getText());
+		ep.setProtetor1(jan.getTe().getProtAudTrad().getText());
+		ep.setProtetor2(jan.getTe().getProdAuri().getText());
+		ep.setSapatilha(jan.getTe().getSapatDesc().getText());
+		ep.setTouca(jan.getTe().getToucaDesc().getText());
+		ep.setOculos1(jan.getTe().getOculosSegPoli().getText());
+		ep.setOculos2(jan.getTe().getOculosSegAmp().getText());
+		ep.setEscudo(jan.getTe().getEscudoProt().getText());
+		ep.setMatricula(jan.getTe().getFieldMatricula().getText());
+		ep.setTelf(jan.getTe().getFieldTelf().getText());
+		ep.setFunc(jan.getTe().getComboFunc().getSelectedItem().toString());
+		ep.setObs(jan.getTe().getTextAreaObs().getText());
+		if(epdao.cadastraEPI(ep)){
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Solicitação enviada! ID do pedido: "+ ep.getID());
+		}else{
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Erro ao enviar solicitação");
+		};
 	}
 	
 	

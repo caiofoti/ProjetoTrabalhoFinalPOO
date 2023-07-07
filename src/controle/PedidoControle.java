@@ -45,6 +45,11 @@ public class PedidoControle implements ActionListener {
 			peddao.consultaIncendio(ped);
 			JOptionPane.showMessageDialog(jan.getContentPane(), "Pedido encontrado!");
 			jan.getTp().getAreaConsulta().append(peddao.getConsulta());
+		}else if(jan.getTp().getComboTipo().getSelectedItem().toString() == "Pedidos EPIS") {
+			ped.setID(jan.getTp().getFieldID().getText());
+			peddao.consultaEpi(ped);
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Pedido encontrado!");
+			jan.getTp().getAreaConsulta().append(peddao.getConsulta());
 		}
 
 	}
@@ -57,6 +62,10 @@ public class PedidoControle implements ActionListener {
 		} else if (jan.getTp().getComboTipo().getSelectedItem().toString() == "Pedidos incêndio") {
 			ped.setID(jan.getTp().getFieldID().getText());
 			peddao.removeIncendio(ped);
+			JOptionPane.showMessageDialog(jan.getContentPane(), "Pedido removido!");
+		}else if(jan.getTp().getComboTipo().getSelectedItem().toString() == "Pedidos EPIS") {
+			ped.setID(jan.getTp().getFieldID().getText());
+			peddao.removeEPIS(ped);
 			JOptionPane.showMessageDialog(jan.getContentPane(), "Pedido removido!");
 		}
 	}

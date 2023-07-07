@@ -10,7 +10,7 @@ import modelo.Login;
 public class LoginDAO {
 	
 	private Connection con;
-	
+	private String coluna1, coluna2;
 	public LoginDAO()
 	{
 		
@@ -32,13 +32,16 @@ public class LoginDAO {
 			prep.setString(2, l.getSenha());
 			
 			res=prep.executeQuery();
-			
+				
 			if(res.next())
 			{
-				SQLConnection.fecharConexao();
-				return true;
+				coluna1 = res.getString(1);
+				coluna2 = res.getString(2);
 			}
-			
+			l.setUsuario(coluna1);
+			l.setSenha(coluna2);
+			SQLConnection.fecharConexao();
+			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,6 +49,14 @@ public class LoginDAO {
 		
 		SQLConnection.fecharConexao();
 		return false;	
+	}
+
+	public String getColuna1() {
+		return coluna1;
+	}
+
+	public void setColuna1(String coluna1) {
+		this.coluna1 = coluna1;
 	}
 
 }

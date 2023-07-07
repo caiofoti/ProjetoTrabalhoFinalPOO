@@ -11,6 +11,7 @@ public class Incendio {
 	private String fone;
 	private String obs;
 	private String ID;
+	private String usuario;
 
 	public Incendio(String irreg, String sist, String local, String fone, String obs) {
 		super();
@@ -45,6 +46,15 @@ public class Incendio {
 
 	public Incendio() {
 
+	}
+
+	
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getIrreg() {

@@ -9,6 +9,7 @@ import dao.CortinaDAO;
 import dao.IncendioDAO;
 import modelo.Cortina;
 import modelo.Incendio;
+import modelo.Login;
 import visao.JanelaPrincipal;
 
 public class IncendioControle implements ActionListener {
@@ -16,10 +17,12 @@ public class IncendioControle implements ActionListener {
 	private Incendio inc;
 	private JanelaPrincipal jan;
 	private IncendioDAO incdao;
+	private Login l;
 
-	public IncendioControle(JanelaPrincipal j, Incendio incendio) {
+	public IncendioControle(JanelaPrincipal j, Incendio incendio, Login login) {
 		jan = j;
 		inc = incendio;
+		l = login;
 		incdao = new IncendioDAO();
 		registraListeners();
 	}
@@ -30,6 +33,7 @@ public class IncendioControle implements ActionListener {
 	}
 
 	public void enviarIncendio() {
+		inc.setUsuario(l.getUsuario());
 		inc.setIrreg(jan.getT2().getIrregArea().getText());
 		inc.setSist(jan.getT2().getComboSist().getSelectedItem().toString());
 		inc.setLocal(jan.getT2().getFieldLocal().getText());

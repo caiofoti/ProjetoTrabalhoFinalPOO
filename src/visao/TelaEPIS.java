@@ -56,6 +56,7 @@ public class TelaEPIS extends JPanel {
 	private JLabel labelTelf;
 	private JTextField fieldTelf;
 	private JTextArea textAreaObs;
+	private JLabel imagemPedidosInternos;
 	/**
 	 * Create the panel.
 	 */
@@ -75,11 +76,11 @@ public class TelaEPIS extends JPanel {
 
 		JPanel panel = new JPanel();
 		scrollPane.setViewportView(panel);
-		panel.setLayout(new MigLayout("", "[grow]", "[][10px][][][][][10px][][10px][][10px][][][][][][][][][][][][][][][][][][][][][15px][][][][][][][][15px][][][][80px][15px][][][20px][]"));
+		panel.setLayout(new MigLayout("", "[grow]", "[][10px][][][][][10px][][10px][][10px][][][][][][][][][][][][][][][][][][][][][15px][][][][][][][][15px][][][]\r\n"));
 
 		JLabel labelFoto = new JLabel();
 		labelFoto.setIcon(new ImageIcon("ProjetoTrabalhoFinalPOO\\src\\TelaPedidos4.png"));
-		panel.add(labelFoto, "cell 0 0");
+		panel.add(labelFoto, "flowx,cell 0 0");
 
 		JLabel labelServiços = new JLabel("Serviço:");
 		labelServiços.setFont(new Font("Arial", Font.BOLD, 11));
@@ -198,6 +199,12 @@ public class TelaEPIS extends JPanel {
 
 		 comboFunc = new JComboBox();
 		panel.add(comboFunc, "cell 0 37,growx");
+		comboFunc.addItem("-------");
+		comboFunc.addItem("Docente");
+		comboFunc.addItem("Técnico de Laboratório");
+		comboFunc.addItem("Técnico Administrativo");
+		comboFunc.addItem("Bolsista");
+		comboFunc.addItem("Estágiarios da UFCSPA");
 
 		JLabel labelObservações = new JLabel("Observações");
 		labelObservações.setFont(new Font("Arial", Font.BOLD, 14));
@@ -219,6 +226,10 @@ public class TelaEPIS extends JPanel {
 
 		buttonCancelar = new JButton("Cancelar");
 		panel_1.add(buttonCancelar, "cell 1 0,grow");
+		
+		imagemPedidosInternos = new JLabel("");
+		imagemPedidosInternos.setIcon(new ImageIcon(TelaEPIS.class.getResource("/figuras/TelaPedidos4.png")));
+		panel.add(imagemPedidosInternos, "cell 0 0");
 	}
 	
 	// ########### GETTERS E SETTERS

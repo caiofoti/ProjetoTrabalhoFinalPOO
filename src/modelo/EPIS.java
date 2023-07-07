@@ -3,7 +3,7 @@ package modelo;
 import java.util.Random;
 
 public class EPIS {
-	private String ID, luva1, luva2, luva3, luva4, luva5, manga, avental, cartucho1, cartucho2, resp1, resp2, mascara,
+	private String usuario, ID, luva1, luva2, luva3, luva4, luva5, manga, avental, cartucho1, cartucho2, resp1, resp2, mascara,
 	resp3, protetor1, protetor2, sapatilha, touca, oculos1, oculos2, escudo, matricula, telf, func, obs;
 	
 
@@ -15,6 +15,14 @@ public class EPIS {
 		int numeroAleatorio = random.nextInt(999999) + 1;
 		ID = String.valueOf(numeroAleatorio);
 		return String.valueOf(numeroAleatorio);
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getFunc() {

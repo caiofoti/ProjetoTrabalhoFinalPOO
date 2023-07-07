@@ -91,6 +91,7 @@ public class JanelaPrincipal extends JFrame{
 		menuBar.add(menuASCOM);
 		
 		menuEngenharia = new JMenu("Engenharia");
+		menuEngenharia.setEnabled(false);
 		menuBar.add(menuEngenharia);
 		
 		JMenuItem itemCortinas = new JMenuItem("Solicitação de cortinas");

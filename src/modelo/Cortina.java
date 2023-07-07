@@ -10,8 +10,9 @@ public class Cortina {
 	private String just;
 	private String resp;
 	private String ID;
+	private String usuario;
 
-	public Cortina(String sub, String tel, String email, String local, String just, String resp) {
+	public Cortina(String sub, String tel, String email, String local, String just, String resp, String usuario) {
 		super();
 		this.sub = sub;
 		this.tel = tel;
@@ -19,6 +20,7 @@ public class Cortina {
 		this.local = local;
 		this.just = just;
 		this.resp = resp;
+		this.usuario = usuario;
 	}
 
 	public String geraID() {
@@ -102,6 +104,14 @@ public class Cortina {
 
 	public void setID(String iD) {
 		ID = iD;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 }

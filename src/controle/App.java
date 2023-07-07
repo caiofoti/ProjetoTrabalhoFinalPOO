@@ -23,8 +23,8 @@ public class App {
 		TelaDeAutenticar ta = new TelaDeAutenticar();
 		LoginDAO logindao = new LoginDAO();
 		LoginControle logcon = new LoginControle(jan, li);
-		CortinaControle corcon = new CortinaControle(jan, co);
-		IncendioControle inccon = new IncendioControle(jan, inc);
+		CortinaControle corcon = new CortinaControle(jan, co, li);
+		IncendioControle inccon = new IncendioControle(jan, inc, li);
 		PedidoControle pedcon = new PedidoControle(jan, p, inc);
 		EpisControle epcon = new EpisControle(jan, ep);
 	}
