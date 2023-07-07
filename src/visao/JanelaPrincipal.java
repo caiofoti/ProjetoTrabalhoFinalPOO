@@ -19,7 +19,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 
-public class JanelaPrincipal extends JFrame{
+public class JanelaPrincipal extends JFrame {
 
 	/**
 	 * 
@@ -32,6 +32,7 @@ public class JanelaPrincipal extends JFrame{
 	private TelaCortina tc = new TelaCortina();
 	private JMenuItem itemSair;
 	private CardLayout card;
+	private TelaInicial ti = new TelaInicial();
 	private TelaEPIS te = new TelaEPIS();
 	private TelaPedidosInternos tp = new TelaPedidosInternos();
 
@@ -58,67 +59,74 @@ public class JanelaPrincipal extends JFrame{
 		setTitle("Sistema de Pedidos Internos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 665, 658);
-		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setToolTipText("ASCOM");
 		setJMenuBar(menuBar);
-		
+
 		JMenu menuPrincipal = new JMenu("Principal");
 		menuBar.add(menuPrincipal);
-		
+
 		JMenuItem itemAutenticar = new JMenuItem("Autenticar");
+		itemAutenticar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				card.show(content, "tela-autenticar");
+			}
+		});
 		itemAutenticar.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/autenticar.png")));
-		
 		content = new JPanel();
 		content.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
 		card = new CardLayout();
-		
+
 		content.setLayout(card);
-		ta.getButtonAutenticar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/verificar (4).png")));
+		content.add(ti, "tela-inicial");
+		content.add(ta, "tela-autenticar");
+
+		ta.getButtonAutenticar()
+				.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/verificar (4).png")));
 		ta.getButtonCancelar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/cruz.png")));
 		ta.getButtonAutenticar().setText("Autenticar");
-		
-		content.add(ta, "tela1");
-		t2.getButtonEnviar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/parte-superior-do-aviao-de-papel.png")));
+		t2.getButtonEnviar().setIcon(
+				new ImageIcon(JanelaPrincipal.class.getResource("/figuras/parte-superior-do-aviao-de-papel.png")));
 		t2.getButtonCancelar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/cruz.png")));
 		content.add(t2, "tela-inc");
-		tc.getButtonEnviar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/parte-superior-do-aviao-de-papel.png")));
+		tc.getButtonEnviar().setIcon(
+				new ImageIcon(JanelaPrincipal.class.getResource("/figuras/parte-superior-do-aviao-de-papel.png")));
 		tc.getButtonCancelar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/cruz.png")));
 		content.add(tc, "tela-cort");
-		te.getButtonEnviar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/parte-superior-do-aviao-de-papel.png")));
+		te.getButtonEnviar().setIcon(
+				new ImageIcon(JanelaPrincipal.class.getResource("/figuras/parte-superior-do-aviao-de-papel.png")));
 		te.getButtonCancelar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/cruz.png")));
 		content.add(te, "tela-epis");
 		tp.getButtonRemover().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/cruz.png")));
 		tp.getButtonConsultar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/procurar.png")));
 		content.add(tp, "tela-pedidos");
-		
-		
+
 		menuPrincipal.add(itemAutenticar);
-		
-		 itemSair = new JMenuItem("Sair");
-		 itemSair.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/sair.png")));
+
+		itemSair = new JMenuItem("Sair");
+		itemSair.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/sair.png")));
 		menuPrincipal.add(itemSair);
-		
+
 		JMenu menuASCOM = new JMenu("ASCOM");
 		menuASCOM.setEnabled(false);
 		menuBar.add(menuASCOM);
-		
+
 		menuEngenharia = new JMenu("Engenharia");
 		menuEngenharia.setEnabled(false);
 		menuBar.add(menuEngenharia);
-		
+
 		JMenuItem itemCortinas = new JMenuItem("Solicitação de cortinas");
 		itemCortinas.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/persianas.png")));
 		itemCortinas.setSelectedIcon(null);
+
 		itemCortinas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(content, "tela-cort");
-				
+
 			}
 		});
 		menuEngenharia.add(itemCortinas);
-		
+
 		JMenuItem itemIncendio = new JMenuItem("Manuntenção dos Sistemas de Incêndio");
 		itemIncendio.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/chama.png")));
 		itemIncendio.addActionListener(new ActionListener() {
@@ -126,10 +134,9 @@ public class JanelaPrincipal extends JFrame{
 				card.show(content, "tela-inc");
 			}
 		});
-		
-	
+
 		menuEngenharia.add(itemIncendio);
-		
+
 		JMenuItem itemEPIS = new JMenuItem("EPI's");
 		itemEPIS.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/rosto-de-mascara.png")));
 		itemEPIS.addActionListener(new ActionListener() {
@@ -138,7 +145,7 @@ public class JanelaPrincipal extends JFrame{
 			}
 		});
 		menuEngenharia.add(itemEPIS);
-		
+
 		JMenuItem itemPedidos = new JMenuItem("Pedidos Internos");
 		itemPedidos.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/pedidos.png")));
 		itemPedidos.addActionListener(new ActionListener() {
@@ -146,22 +153,23 @@ public class JanelaPrincipal extends JFrame{
 				card.show(content, "tela-pedidos");
 			}
 		});
+
+		card.show(content, "tela-inicial");
+
 		menuEngenharia.add(itemPedidos);
-		
+
 		JMenu menuProplan = new JMenu("PROPLAN");
 		menuProplan.setEnabled(false);
 		menuBar.add(menuProplan);
-		
+
 		JMenu menuSEI = new JMenu("SEI");
 		menuSEI.setEnabled(false);
 		menuBar.add(menuSEI);
-		
+
 		setContentPane(content);
 	}
-	
-	
+
 	// ########### GETTERS E SETTERS
-	
 
 	public TelaIncendio getT2() {
 		return t2;
@@ -218,8 +226,5 @@ public class JanelaPrincipal extends JFrame{
 	public void setTp(TelaPedidosInternos tp) {
 		this.tp = tp;
 	}
-	
-	
-	
 
 }

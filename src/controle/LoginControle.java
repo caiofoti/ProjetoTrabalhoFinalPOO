@@ -59,7 +59,7 @@ public class LoginControle implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getActionCommand().equals("Autentica")) {
+		if(e.getActionCommand().equals("Autenticar")) {
 			autenticar();
 		}
 		else if (e.getActionCommand().equals("Sair")) {
