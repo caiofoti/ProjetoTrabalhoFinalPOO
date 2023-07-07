@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class JanelaPrincipal extends JFrame{
 
@@ -66,6 +67,7 @@ public class JanelaPrincipal extends JFrame{
 		menuBar.add(menuPrincipal);
 		
 		JMenuItem itemAutenticar = new JMenuItem("Autenticar");
+		itemAutenticar.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/autenticar.png")));
 		
 		content = new JPanel();
 		content.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -73,17 +75,29 @@ public class JanelaPrincipal extends JFrame{
 		card = new CardLayout();
 		
 		content.setLayout(card);
+		ta.getButtonAutenticar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/verificar (4).png")));
+		ta.getButtonCancelar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/cruz.png")));
+		ta.getButtonAutenticar().setText("Autenticar");
 		
 		content.add(ta, "tela1");
+		t2.getButtonEnviar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/parte-superior-do-aviao-de-papel.png")));
+		t2.getButtonCancelar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/cruz.png")));
 		content.add(t2, "tela-inc");
+		tc.getButtonEnviar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/parte-superior-do-aviao-de-papel.png")));
+		tc.getButtonCancelar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/cruz.png")));
 		content.add(tc, "tela-cort");
+		te.getButtonEnviar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/parte-superior-do-aviao-de-papel.png")));
+		te.getButtonCancelar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/cruz.png")));
 		content.add(te, "tela-epis");
+		tp.getButtonRemover().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/cruz.png")));
+		tp.getButtonConsultar().setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/procurar.png")));
 		content.add(tp, "tela-pedidos");
 		
 		
 		menuPrincipal.add(itemAutenticar);
 		
 		 itemSair = new JMenuItem("Sair");
+		 itemSair.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/sair.png")));
 		menuPrincipal.add(itemSair);
 		
 		JMenu menuASCOM = new JMenu("ASCOM");
@@ -95,6 +109,8 @@ public class JanelaPrincipal extends JFrame{
 		menuBar.add(menuEngenharia);
 		
 		JMenuItem itemCortinas = new JMenuItem("Solicitação de cortinas");
+		itemCortinas.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/persianas.png")));
+		itemCortinas.setSelectedIcon(null);
 		itemCortinas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(content, "tela-cort");
@@ -104,6 +120,7 @@ public class JanelaPrincipal extends JFrame{
 		menuEngenharia.add(itemCortinas);
 		
 		JMenuItem itemIncendio = new JMenuItem("Manuntenção dos Sistemas de Incêndio");
+		itemIncendio.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/chama.png")));
 		itemIncendio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(content, "tela-inc");
@@ -114,6 +131,7 @@ public class JanelaPrincipal extends JFrame{
 		menuEngenharia.add(itemIncendio);
 		
 		JMenuItem itemEPIS = new JMenuItem("EPI's");
+		itemEPIS.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/rosto-de-mascara.png")));
 		itemEPIS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(content, "tela-epis");
@@ -122,6 +140,7 @@ public class JanelaPrincipal extends JFrame{
 		menuEngenharia.add(itemEPIS);
 		
 		JMenuItem itemPedidos = new JMenuItem("Pedidos Internos");
+		itemPedidos.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/figuras/pedidos.png")));
 		itemPedidos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(content, "tela-pedidos");
@@ -136,20 +155,6 @@ public class JanelaPrincipal extends JFrame{
 		JMenu menuSEI = new JMenu("SEI");
 		menuSEI.setEnabled(false);
 		menuBar.add(menuSEI);
-		
-		
-		
-		
-		
-		
-		JPanel panel = new JPanel();
-		content.add(panel, "name_581334450997900");
-		panel.setLayout(new CardLayout(0, 0));
-		
-		JLabel labelSistemas = new JLabel("Sistema de Pedidos Internos");
-		labelSistemas.setHorizontalAlignment(SwingConstants.CENTER);
-		labelSistemas.setFont(new Font("Tahoma", Font.BOLD, 40));
-		panel.add(labelSistemas, "name_6323191062300");
 		
 		setContentPane(content);
 	}
